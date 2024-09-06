@@ -516,7 +516,7 @@ Cg
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="373" id="yLV-H9-n37"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TripCell" id="wbe-Hn-1DQ" customClass="MyTripCell" customModule="WhereToGoToday" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MyTripCell" id="wbe-Hn-1DQ" customClass="MyTripCell" customModule="WhereToGoToday" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="373" height="110.33333587646484"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wbe-Hn-1DQ" id="X0P-4F-he8">
