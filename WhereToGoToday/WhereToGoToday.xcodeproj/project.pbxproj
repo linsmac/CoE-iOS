@@ -16,9 +16,9 @@
 		30875AA62C6397F80024A03B /* WhereToGoTodayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30875AA52C6397F80024A03B /* WhereToGoTodayTests.swift */; };
 		30875AB02C6397F80024A03B /* WhereToGoTodayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30875AAF2C6397F80024A03B /* WhereToGoTodayUITests.swift */; };
 		30875AB22C6397F80024A03B /* WhereToGoTodayUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30875AB12C6397F80024A03B /* WhereToGoTodayUITestsLaunchTests.swift */; };
+		308B5F1D2C983BC00012214E /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308B5F1C2C983BC00012214E /* IndexViewController.swift */; };
 		30C5F28A2C87FC4D00E678F2 /* MyTripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C5F2892C87FC4D00E678F2 /* MyTripsViewController.swift */; };
 		30C5F28C2C88407900E678F2 /* MyTripCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C5F28B2C88407900E678F2 /* MyTripCell.swift */; };
-		30C5F2902C8856D900E678F2 /* IndexViewController.swift .swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C5F28F2C8856D900E678F2 /* IndexViewController.swift .swift */; };
 		30C5F2932C88583500E678F2 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C5F2922C88583500E678F2 /* AccountViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,9 +53,9 @@
 		30875AAB2C6397F80024A03B /* WhereToGoTodayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhereToGoTodayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		30875AAF2C6397F80024A03B /* WhereToGoTodayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereToGoTodayUITests.swift; sourceTree = "<group>"; };
 		30875AB12C6397F80024A03B /* WhereToGoTodayUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereToGoTodayUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		308B5F1C2C983BC00012214E /* IndexViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexViewController.swift; sourceTree = "<group>"; };
 		30C5F2892C87FC4D00E678F2 /* MyTripsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTripsViewController.swift; sourceTree = "<group>"; };
 		30C5F28B2C88407900E678F2 /* MyTripCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTripCell.swift; sourceTree = "<group>"; };
-		30C5F28F2C8856D900E678F2 /* IndexViewController.swift .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IndexViewController.swift .swift"; sourceTree = "<group>"; };
 		30C5F2922C88583500E678F2 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -141,8 +141,8 @@
 			children = (
 				30C5F2892C87FC4D00E678F2 /* MyTripsViewController.swift */,
 				30C5F28B2C88407900E678F2 /* MyTripCell.swift */,
-				30C5F28F2C8856D900E678F2 /* IndexViewController.swift .swift */,
 				30C5F2922C88583500E678F2 /* AccountViewController.swift */,
+				308B5F1C2C983BC00012214E /* IndexViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -278,9 +278,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30C5F2902C8856D900E678F2 /* IndexViewController.swift .swift in Sources */,
 				30C5F2932C88583500E678F2 /* AccountViewController.swift in Sources */,
 				30875A932C6397F20024A03B /* ViewController.swift in Sources */,
+				308B5F1D2C983BC00012214E /* IndexViewController.swift in Sources */,
 				30C5F28A2C87FC4D00E678F2 /* MyTripsViewController.swift in Sources */,
 				30875A8F2C6397F20024A03B /* AppDelegate.swift in Sources */,
 				30875A912C6397F20024A03B /* SceneDelegate.swift in Sources */,
