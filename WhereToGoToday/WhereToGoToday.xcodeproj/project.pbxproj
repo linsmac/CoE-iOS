@@ -17,6 +17,7 @@
 		30875AB02C6397F80024A03B /* WhereToGoTodayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30875AAF2C6397F80024A03B /* WhereToGoTodayUITests.swift */; };
 		30875AB22C6397F80024A03B /* WhereToGoTodayUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30875AB12C6397F80024A03B /* WhereToGoTodayUITestsLaunchTests.swift */; };
 		308B5F1D2C983BC00012214E /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308B5F1C2C983BC00012214E /* IndexViewController.swift */; };
+		308B5F202C9AC57B0012214E /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 308B5F1F2C9AC57B0012214E /* IQKeyboardManagerSwift */; };
 		30C5F28A2C87FC4D00E678F2 /* MyTripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C5F2892C87FC4D00E678F2 /* MyTripsViewController.swift */; };
 		30C5F28C2C88407900E678F2 /* MyTripCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C5F28B2C88407900E678F2 /* MyTripCell.swift */; };
 		30C5F2932C88583500E678F2 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C5F2922C88583500E678F2 /* AccountViewController.swift */; };
@@ -64,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				308B5F202C9AC57B0012214E /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,6 +165,9 @@
 			dependencies = (
 			);
 			name = WhereToGoToday;
+			packageProductDependencies = (
+				308B5F1F2C9AC57B0012214E /* IQKeyboardManagerSwift */,
+			);
 			productName = WhereToGoToday;
 			productReference = 30875A8B2C6397F20024A03B /* WhereToGoToday.app */;
 			productType = "com.apple.product-type.application";
@@ -235,6 +240,9 @@
 				Base,
 			);
 			mainGroup = 30875A822C6397F20024A03B;
+			packageReferences = (
+				308B5F1E2C9AC57B0012214E /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+			);
 			productRefGroup = 30875A8C2C6397F20024A03B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -472,8 +480,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -500,8 +508,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -631,6 +639,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		308B5F1E2C9AC57B0012214E /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		308B5F1F2C9AC57B0012214E /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 308B5F1E2C9AC57B0012214E /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 30875A832C6397F20024A03B /* Project object */;
 }

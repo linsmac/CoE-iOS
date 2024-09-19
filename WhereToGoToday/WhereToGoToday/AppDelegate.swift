@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,7 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         //作用：當應用啟動完成後會調用這個方法。在這裡可以執行一些初始化操作，比如設置初始視圖控制器，配置第三方庫等。
         //返回值：true 表示啟動過程成功完成。
-        // 呼叫函式
+        IQKeyboardManager.shared.enable = true
+//        IQKeyboardManager.shared.resignOnTouchOutside = true
         appOpen()
         // Override point for customization after application launch.
         return true
