@@ -453,8 +453,12 @@ Cg
                                 <rect key="frame" x="0.0" y="103" width="393" height="666"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="jeW-CK-EAu">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="zfI-Oa-Ixh">
                                 <rect key="frame" x="0.0" y="298" width="393" height="471"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="jeW-CK-EAu">
+                                <rect key="frame" x="0.0" y="337" width="393" height="432"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DetailCell" id="yyI-kR-hW4">
@@ -469,23 +473,42 @@ Cg
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="w6t-JU-bMq">
+                                <rect key="frame" x="0.0" y="298" width="393" height="32"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentedControlChanged:" destination="531-c1-CYY" eventType="valueChanged" id="Rvs-cL-AE1"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KQd-PR-KZ2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="afN-Ba-uU3" firstAttribute="top" secondItem="KQd-PR-KZ2" secondAttribute="top" id="0O5-bf-3a8"/>
-                            <constraint firstItem="jeW-CK-EAu" firstAttribute="top" secondItem="KQd-PR-KZ2" secondAttribute="top" constant="195" id="AKf-Cz-Qn8"/>
+                            <constraint firstItem="jeW-CK-EAu" firstAttribute="top" secondItem="w6t-JU-bMq" secondAttribute="bottom" constant="8" symbolic="YES" id="3dR-Py-9Yz"/>
+                            <constraint firstItem="zfI-Oa-Ixh" firstAttribute="leading" secondItem="KQd-PR-KZ2" secondAttribute="leading" id="72F-Nr-NJw"/>
                             <constraint firstItem="afN-Ba-uU3" firstAttribute="trailing" secondItem="KQd-PR-KZ2" secondAttribute="trailing" id="EPk-Cs-2Df"/>
+                            <constraint firstItem="w6t-JU-bMq" firstAttribute="top" secondItem="zfI-Oa-Ixh" secondAttribute="top" id="EyI-b2-YyZ"/>
+                            <constraint firstItem="w6t-JU-bMq" firstAttribute="leading" secondItem="KQd-PR-KZ2" secondAttribute="leading" id="HPd-HX-YNR"/>
                             <constraint firstItem="afN-Ba-uU3" firstAttribute="bottom" secondItem="KQd-PR-KZ2" secondAttribute="bottom" id="RXv-Xo-kMS"/>
+                            <constraint firstItem="zfI-Oa-Ixh" firstAttribute="top" secondItem="KQd-PR-KZ2" secondAttribute="top" constant="195" id="Spz-Hw-IVm"/>
+                            <constraint firstItem="zfI-Oa-Ixh" firstAttribute="trailing" secondItem="KQd-PR-KZ2" secondAttribute="trailing" id="ViW-AU-uyi"/>
                             <constraint firstItem="jeW-CK-EAu" firstAttribute="leading" secondItem="KQd-PR-KZ2" secondAttribute="leading" id="eu5-eO-O1H"/>
                             <constraint firstItem="jeW-CK-EAu" firstAttribute="trailing" secondItem="KQd-PR-KZ2" secondAttribute="trailing" id="jRW-CW-eb7"/>
+                            <constraint firstItem="zfI-Oa-Ixh" firstAttribute="bottom" secondItem="KQd-PR-KZ2" secondAttribute="bottom" id="pEH-b0-TNd"/>
+                            <constraint firstItem="w6t-JU-bMq" firstAttribute="trailing" secondItem="KQd-PR-KZ2" secondAttribute="trailing" id="pEI-5f-QaV"/>
                             <constraint firstItem="afN-Ba-uU3" firstAttribute="leading" secondItem="KQd-PR-KZ2" secondAttribute="leading" id="qQv-uk-FlE"/>
                             <constraint firstItem="jeW-CK-EAu" firstAttribute="bottom" secondItem="KQd-PR-KZ2" secondAttribute="bottom" id="syL-eC-1Rf"/>
+                            <constraint firstItem="jeW-CK-EAu" firstAttribute="leading" secondItem="w6t-JU-bMq" secondAttribute="leading" id="wel-6q-WsF"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="aAz-Ho-fgb"/>
                     <connections>
                         <outlet property="mapView" destination="afN-Ba-uU3" id="H22-57-Y4p"/>
+                        <outlet property="segmentedControl" destination="w6t-JU-bMq" id="XxJ-MC-co4"/>
                         <outlet property="tableView" destination="jeW-CK-EAu" id="Ifr-bl-4on"/>
                     </connections>
                 </viewController>

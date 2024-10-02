@@ -11,11 +11,14 @@ class ExploreDetailController: UIViewController, UITableViewDelegate, UITableVie
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     var tripInfo: TripResponse?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         // 初始化地圖
         let initialLocation = CLLocation(latitude: 25.0330, longitude: 121.5654)
@@ -25,8 +28,28 @@ class ExploreDetailController: UIViewController, UITableViewDelegate, UITableVie
         tableView.delegate = self
         tableView.dataSource = self
         
+        // 初始設置 Segmented Control
+        setupSegmentedControl()
+        
         print("初始化詳細頁面")
         
+    }
+    
+    func setupSegmentedControl() {
+        segmentedControl.removeAllSegments()
+        segmentedControl.insertSegment(withTitle: "行程總覽", at: 0, animated: false)
+        
+        if let days = tripInfo?.generatedTripInfo.days {
+            for (index, day) in days.enumerated() {
+                segmentedControl.insertSegment(withTitle: day.label, at: index + 1, animated: false)
+            }
+        }
+        
+        segmentedControl.selectedSegmentIndex = 0
+    }
+    
+    @IBAction func segmentedControlChanged(_ sender: UISegmentedControl) {
+        tableView.reloadData()
     }
     
     func centerMapOnLocation(location: CLLocation) {
@@ -37,45 +60,34 @@ class ExploreDetailController: UIViewController, UITableViewDelegate, UITableVie
     
     func numberOfSections(in tableView: UITableView) -> Int {
         // 第一個 section 是 generated_trip_info，後面每個 section 是一天的活動
-        return 1 + (tripInfo?.generatedTripInfo.days.count ?? 0)
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            // 第一個 section 是 generated_trip_info，只有一個 row
-            return 1
-        } else {
-            // 每一天的活動數量決定 row 的數量
-            return tripInfo?.generatedTripInfo.days[section - 1].activities.count ?? 0
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section == 0 {
-            return "行程總覽"
-        } else {
-            // 根據 section 決定標題
-            return tripInfo?.generatedTripInfo.days[section - 1].label
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+            return 1  // 行程總覽
+        default:
+            let dayIndex = segmentedControl.selectedSegmentIndex - 1
+            return tripInfo?.generatedTripInfo.days[dayIndex].activities.count ?? 0
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let DetailCell = tableView.dequeueReusableCell(withIdentifier: "DetailCell", for: indexPath)
         
-        if indexPath.section == 0 {
-            // 顯示行程總覽
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+            // 行程總覽
             if let overview = tripInfo?.generatedTripInfo.tripOverview {
-                DetailCell.textLabel?.text = "地點: \(overview.location)\n開始日期: \(overview.startDate)\n結束日期: \(overview.endDate)\n描述: \(overview.description)"
+                DetailCell.textLabel?.text = "地點: \(overview.location)\n開始日期: \(overview.startDate)\n結束日期: \(overview.endDate)"
             }
-        } else {
-            // 顯示每天的活動
-            let dayIndex = indexPath.section - 1
-            if let activity = tripInfo?.generatedTripInfo.days[dayIndex].activities[indexPath.row] {
-                DetailCell.textLabel?.text = "地點: \(activity.location)\n活動: \(activity.activity)\n交通方式: \(activity.transportation?.mode ?? "")"
-                DetailCell.detailTextLabel?.text = "停留時間: \(activity.stayDuration ?? "N/A")"
-            }
+        default:
+            let dayIndex = segmentedControl.selectedSegmentIndex - 1
+            let activity = tripInfo?.generatedTripInfo.days[dayIndex].activities[indexPath.row]
+            DetailCell.textLabel?.text = activity?.location
         }
-        
+
         return DetailCell
     }
 
