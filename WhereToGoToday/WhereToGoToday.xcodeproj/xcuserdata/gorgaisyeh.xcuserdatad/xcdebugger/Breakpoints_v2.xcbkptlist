@@ -7,54 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D0BA04C1-6B17-4960-AD30-92111A9203B5"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "WhereToGoToday/Controller/IndexViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
-            landmarkName = "exploreButtonTapped(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "EB18D368-0DB5-4DEE-B580-D4A69FE26C57"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "WhereToGoToday/Controller/IndexViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
-            landmarkName = "exploreButtonTapped(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "AB9B06F6-E3FC-42B1-8696-5E8783811D73"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "WhereToGoToday/Controller/IndexViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
-            landmarkName = "exploreButtonTapped(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "E699A0B1-CB9E-41CB-B99D-3809C374A5D1"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -65,6 +17,194 @@
             startingLineNumber = "22"
             endingLineNumber = "22"
             landmarkName = "application(_:didFinishLaunchingWithOptions:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9FB36700-FBF4-46C0-B944-5F1C2D4343A9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WhereToGoToday/Controller/IndexViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "exploreButtonTapped(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AF0BA7C3-356D-4747-8C22-AD4E388FD430"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WhereToGoToday/Controller/ExploreDetailController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "ExploreDetailController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "AF0BA7C3-356D-4747-8C22-AD4E388FD430 - 79a4a078e404c2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WhereToGoToday.ExploreDetailController.tripInfo.getter : Swift.Optional&lt;WhereToGoToday.TripResponse&gt;"
+                  moduleName = "WhereToGoToday"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gorgaisyeh/ella/CoE-iOS-new/WhereToGoToday/WhereToGoToday/Controller/ExploreDetailController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  uuid = "AF0BA7C3-356D-4747-8C22-AD4E388FD430 - 309e0a3eb23b0b36"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WhereToGoToday.ExploreDetailController.tripInfo.setter : Swift.Optional&lt;WhereToGoToday.TripResponse&gt;"
+                  moduleName = "WhereToGoToday"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gorgaisyeh/ella/CoE-iOS-new/WhereToGoToday/WhereToGoToday/Controller/ExploreDetailController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  uuid = "AF0BA7C3-356D-4747-8C22-AD4E388FD430 - f9ba6762e16e4926"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WhereToGoToday.ExploreDetailController.tripInfo.modify : Swift.Optional&lt;WhereToGoToday.TripResponse&gt;"
+                  moduleName = "WhereToGoToday"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gorgaisyeh/ella/CoE-iOS-new/WhereToGoToday/WhereToGoToday/Controller/ExploreDetailController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "AF0BA7C3-356D-4747-8C22-AD4E388FD430 - c23f34ae5d88f7f7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WhereToGoToday.ExploreDetailController.tripInfo.modify : Swift.Optional&lt;WhereToGoToday.TripResponse&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "WhereToGoToday"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gorgaisyeh/ella/CoE-iOS-new/WhereToGoToday/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "15">
+               </Location>
+               <Location
+                  uuid = "AF0BA7C3-356D-4747-8C22-AD4E388FD430 - e421cbed619f0862"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WhereToGoToday.ExploreDetailController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; WhereToGoToday.ExploreDetailController"
+                  moduleName = "WhereToGoToday"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gorgaisyeh/ella/CoE-iOS-new/WhereToGoToday/WhereToGoToday/Controller/ExploreDetailController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "223">
+               </Location>
+               <Location
+                  uuid = "AF0BA7C3-356D-4747-8C22-AD4E388FD430 - 74115de87cef668e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WhereToGoToday.ExploreDetailController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;WhereToGoToday.ExploreDetailController&gt;"
+                  moduleName = "WhereToGoToday"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gorgaisyeh/ella/CoE-iOS-new/WhereToGoToday/WhereToGoToday/Controller/ExploreDetailController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "180">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2BA25540-4C93-4633-9E37-2990E2CA8183"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WhereToGoToday/Controller/ExploreDetailController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DB5E3570-46BD-4BBA-8D5B-E2D89A036C25"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WhereToGoToday/Controller/ExploreDetailController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "centerMapOnLocation(location:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5D1F072E-643C-4979-915C-44DBEF06459B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WhereToGoToday/Controller/ExploreDetailController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D92EADF1-69EE-4D6A-913D-999C86D09D7C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WhereToGoToday/Controller/ExploreDetailController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

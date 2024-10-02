@@ -12,140 +12,140 @@ class IndexViewController: UIViewController {
     @IBOutlet weak var returnLocationTextField: UITextField!
     @IBOutlet weak var itineraryPreferences: UITextField!
     
+    var apiResponseData: TripResponse? // 保存從 API 回傳的 JSON 資料
+    
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        /*        // 添加鍵盤事件監聽
-         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-         
-         // 允許點擊屏幕空白處隱藏鍵盤
-         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-         view.addGestureRecognizer(tapGesture)
-         
-         
-         }
-         
-         
-         // 鍵盤出現時，調整 UIScrollView 的偏移量
-         @objc func keyboardWillShow(_ notification: Notification) {
-         if let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-         let keyboardHeight = keyboardFrame.cgRectValue.height
-         let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardHeight, right: 0)
-         scrollView.contentInset = contentInsets
-         scrollView.scrollIndicatorInsets = contentInsets
-         }
-         }
-         
-         // 鍵盤隱藏時，還原 UIScrollView 的偏移量
-         @objc func keyboardWillHide(_ notification: Notification) {
-         UIView.animate(withDuration: 0.3) {
-         let contentInsets = UIEdgeInsets.zero
-         self.scrollView.contentInset = contentInsets
-         self.scrollView.scrollIndicatorInsets = contentInsets
-         self.scrollView.setContentOffset(CGPoint.zero, animated: true)
-         }
-         }
-         */
-        /*
-         // 點擊空白處隱藏鍵盤
-         @objc func dismissKeyboard() {
-         view.endEditing(true)
-         }
-         
-         
-         deinit {
-         // 移除通知觀察者
-         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
-         }
-         */
     }
+ 
+    // MARK: - Action for the "Explore" button
+    @IBAction func exploreButtonTapped(_ sender: UIButton) {
+        sender.isEnabled = false
         
-        // MARK: - Action for the "Explore" button
-        @IBAction func exploreButtonTapped(_ sender: UIButton) {
-            // 獲取使用者輸入的值
-            let itinerary = itineraryTextField.text ?? ""
-            let transport = transportTextField.text ?? ""
-            
-            // 從 UIDatePicker 獲取日期
-            let departureDate = departureDateTextField.date
-            let returnDate = returnDateTextField.date
-            
-            let departureLocation = departureLocationTextField.text ?? ""
-            let returnLocation = returnLocationTextField.text ?? ""
-            
-            // 格式化日期顯示
-            let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"  // 符合 ISO 8601 格式
-            let departureDateString = formatter.string(from: departureDate)
-            let returnDateString = formatter.string(from: returnDate)
-            
-            // 進行 API 請求
-            let parameters: [String: Any] = [
-                "trip_theme": itinerary,
-                "transportation": transport,
-                "departure_location": departureLocation,
-                "departure_time": departureDateString,
-                "return_location": returnLocation,
-                "return_time": returnDateString
-            ]
-            
-            // 發送 POST 請求
-            sendPostRequest(with: parameters)
+        let trip_theme = itineraryTextField.text ?? ""
+        let transportation = transportTextField.text ?? ""
+        let departure_location = departureLocationTextField.text ?? ""
+        let return_location = returnLocationTextField.text ?? ""
+        let departure_time = formatDate(date: departureDateTextField.date)
+        let return_time = formatDate(date: returnDateTextField.date)
+        
+        print("itinerary:\(trip_theme)")
+        print("transport:\(transportation)")
+        print("departureDate:\(departure_time)")
+        print("returnDate:\(return_time)")
+        print("departureLocation:\(departure_location)")
+        print("returnLocation:\(return_location)")
+
+        // 呼叫 API
+        callAPI(trip_theme: trip_theme, transportation: transportation, departure_time: departure_time, return_time: return_time, departure_location: departure_location, return_location: return_location)
+        
+        // 在 API 完成後再啟用按鈕
+        DispatchQueue.main.async {
+            sender.isEnabled = true
         }
+    }
+    
+    // 格式化日期
+    func formatDate(date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        return formatter.string(from: date)
+    }
+    
+    var isNavigating = false // 新增一個布林變數來標記是否已在導航
+
+    // 呼叫 API
+    func callAPI(trip_theme: String, transportation: String, departure_time: String, return_time: String, departure_location: String, return_location: String) {
+        let urlString = "https://fastapi-production-a532.up.railway.app/Trip/"
+        guard let url = URL(string: urlString) else { return }
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
+        let body: [String: Any] = [
+            "trip_theme": trip_theme,
+            "transportation": transportation,
+            "departure_time": departure_time,
+            "return_time": return_time,
+            "departure_location": departure_location,
+            "return_location": return_location
+        ]
         
-        func sendPostRequest(with parameters: [String: Any]) {
-            let url = URL(string: "https://fastapi-production-a532.up.railway.app/Trip/")!
-            var request = URLRequest(url: url)
-            request.httpMethod = "POST"
-            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-            request.setValue("application/json", forHTTPHeaderField: "Accept")
-            
-            do {
-                let jsonData = try JSONSerialization.data(withJSONObject: parameters, options: [])
-                request.httpBody = jsonData
-            } catch {
-                print("Error converting parameters to JSON:", error)
+        print("body:\(body)")
+        
+        request.httpBody = try? JSONSerialization.data(withJSONObject: body, options: .fragmentsAllowed)
+
+        // 發送 API 請求
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                print("API request failed: \(error?.localizedDescription ?? "No error description")")
                 return
             }
-            
-            let task = URLSession.shared.dataTask(with: request) { data, response, error in
-                if let error = error {
-                    print("Error with request:", error)
-                    return
-                }
-                
-                guard let data = data else {
-                    print("No data received")
-                    return
-                }
-                
-                do {
-                    // 解析 JSON 回應
-                    let jsonResponse = try JSONSerialization.jsonObject(with: data, options: [])
-                    print("Response from API: \(jsonResponse)")
-                } catch {
-                    print("Error parsing response data:", error)
-                }
+
+            // 打印 API 回應的內容
+            if let responseString = String(data: data, encoding: .utf8) {
+                print("API Response: \(responseString)")
             }
-            
-            task.resume()
+
+            // 解析回應
+            do {
+                let responseData = try JSONDecoder().decode(TripResponse.self, from: data)
+                self.apiResponseData = responseData
+                
+                // 確保只進行一次 segue
+                DispatchQueue.main.async {
+                    if !self.isNavigating {
+                        self.isNavigating = true
+                        self.performSegue(withIdentifier: "showExploreDetail", sender: nil)
+                    }
+                }
+            } catch {
+                print("Failed to decode API response: \(error.localizedDescription)")
+            }
+
         }
         
-        // MARK: - Action for the "Clear" button
-        @IBAction func clearButtonTapped(_ sender: UIButton) {
-            // 清空所有的輸入框
-            itineraryTextField.text = ""
-            transportTextField.text = ""
-            departureLocationTextField.text = ""
-            returnLocationTextField.text = ""
-            
-            // 重設 UIDatePicker 的日期
-            departureDateTextField.setDate(Date(), animated: true)
-            returnDateTextField.setDate(Date(), animated: true)
-        }
-        
+        task.resume()
     }
 
+    // 重置 isNavigating 在下一個視圖控制器消失後
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.isNavigating = false
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // 重置導航狀態，確保每次回到頁面都可以再次導航
+        self.isNavigating = false
+    }
+
+
+
+
+    // 準備 segue 傳遞資料
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showExploreDetail" {
+            if let destinationVC = segue.destination as? ExploreDetailController {
+                // 將 API 回傳的資料傳遞到下一頁
+                destinationVC.tripInfo = apiResponseData
+                print("資料已成功傳送到下一頁")
+            }
+        }
+    }
+  
+    // MARK: - Action for the "Clear" button
+    @IBAction func clearButtonTapped(_ sender: UIButton) {
+        // 清空所有的輸入框
+        itineraryTextField.text = ""
+        transportTextField.text = ""
+        departureLocationTextField.text = ""
+        returnLocationTextField.text = ""
+        
+        // 重設 UIDatePicker 的日期
+        departureDateTextField.setDate(Date(), animated: true)
+        returnDateTextField.setDate(Date(), animated: true)
+    }
+}

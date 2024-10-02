@@ -18,9 +18,11 @@
 		30875AB22C6397F80024A03B /* WhereToGoTodayUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30875AB12C6397F80024A03B /* WhereToGoTodayUITestsLaunchTests.swift */; };
 		308B5F1D2C983BC00012214E /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308B5F1C2C983BC00012214E /* IndexViewController.swift */; };
 		308B5F202C9AC57B0012214E /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 308B5F1F2C9AC57B0012214E /* IQKeyboardManagerSwift */; };
+		30BB7A1A2CA41DE9004A0239 /* ExploreDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BB7A192CA41DE9004A0239 /* ExploreDetailController.swift */; };
 		30C5F28A2C87FC4D00E678F2 /* MyTripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C5F2892C87FC4D00E678F2 /* MyTripsViewController.swift */; };
 		30C5F28C2C88407900E678F2 /* MyTripCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C5F28B2C88407900E678F2 /* MyTripCell.swift */; };
 		30C5F2932C88583500E678F2 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C5F2922C88583500E678F2 /* AccountViewController.swift */; };
+		30F940AC2CAD10350000DACD /* TripModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F940AB2CAD10350000DACD /* TripModels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,9 +57,11 @@
 		30875AAF2C6397F80024A03B /* WhereToGoTodayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereToGoTodayUITests.swift; sourceTree = "<group>"; };
 		30875AB12C6397F80024A03B /* WhereToGoTodayUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereToGoTodayUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		308B5F1C2C983BC00012214E /* IndexViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexViewController.swift; sourceTree = "<group>"; };
+		30BB7A192CA41DE9004A0239 /* ExploreDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreDetailController.swift; sourceTree = "<group>"; };
 		30C5F2892C87FC4D00E678F2 /* MyTripsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTripsViewController.swift; sourceTree = "<group>"; };
 		30C5F28B2C88407900E678F2 /* MyTripCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTripCell.swift; sourceTree = "<group>"; };
 		30C5F2922C88583500E678F2 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		30F940AB2CAD10350000DACD /* TripModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripModels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +121,7 @@
 				30875A972C6397F80024A03B /* Assets.xcassets */,
 				30875A992C6397F80024A03B /* LaunchScreen.storyboard */,
 				30875A9C2C6397F80024A03B /* Info.plist */,
+				30F940AB2CAD10350000DACD /* TripModels.swift */,
 			);
 			path = WhereToGoToday;
 			sourceTree = "<group>";
@@ -145,6 +150,7 @@
 				30C5F28B2C88407900E678F2 /* MyTripCell.swift */,
 				30C5F2922C88583500E678F2 /* AccountViewController.swift */,
 				308B5F1C2C983BC00012214E /* IndexViewController.swift */,
+				30BB7A192CA41DE9004A0239 /* ExploreDetailController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -286,8 +292,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30BB7A1A2CA41DE9004A0239 /* ExploreDetailController.swift in Sources */,
 				30C5F2932C88583500E678F2 /* AccountViewController.swift in Sources */,
 				30875A932C6397F20024A03B /* ViewController.swift in Sources */,
+				30F940AC2CAD10350000DACD /* TripModels.swift in Sources */,
 				308B5F1D2C983BC00012214E /* IndexViewController.swift in Sources */,
 				30C5F28A2C87FC4D00E678F2 /* MyTripsViewController.swift in Sources */,
 				30875A8F2C6397F20024A03B /* AppDelegate.swift in Sources */,

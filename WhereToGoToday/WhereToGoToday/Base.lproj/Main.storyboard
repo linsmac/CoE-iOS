@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,16 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HSU-Sc-9cN">
-                                <rect key="frame" x="0.0" y="59" width="393" height="44"/>
-                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="探索" id="COt-Yz-swt"/>
-                                </items>
-                            </navigationBar>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2qg-La-BwQ">
                                 <rect key="frame" x="0.0" y="104" width="393" height="666"/>
                                 <subviews>
@@ -354,7 +345,7 @@ Cg
                                                     </backgroundConfiguration>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="exploreButtonTapped:" destination="2fY-jW-Hdd" eventType="touchUpInside" id="lQC-t9-YRq"/>
+                                                    <action selector="exploreButtonTapped:" destination="2fY-jW-Hdd" eventType="touchUpInside" id="3dD-3m-GRz"/>
                                                 </connections>
                                             </button>
                                             <datePicker contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="1Vq-7z-GNQ">
@@ -425,33 +416,82 @@ Cg
                         <viewLayoutGuide key="safeArea" id="5iT-dI-Y9H"/>
                         <color key="backgroundColor" red="0.9919483066" green="0.97261327509999995" blue="0.96862643960000006" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="HSU-Sc-9cN" firstAttribute="top" secondItem="5iT-dI-Y9H" secondAttribute="top" id="3Ga-F4-C6D"/>
+                            <constraint firstItem="2qg-La-BwQ" firstAttribute="top" secondItem="5iT-dI-Y9H" secondAttribute="top" constant="1" id="1b6-Mo-KSI"/>
                             <constraint firstItem="2qg-La-BwQ" firstAttribute="leading" secondItem="5iT-dI-Y9H" secondAttribute="leading" id="3th-Xz-kbc"/>
-                            <constraint firstItem="HSU-Sc-9cN" firstAttribute="trailing" secondItem="5iT-dI-Y9H" secondAttribute="trailing" id="BU7-Jc-Crl"/>
                             <constraint firstItem="2qg-La-BwQ" firstAttribute="bottom" secondItem="5iT-dI-Y9H" secondAttribute="bottom" constant="1" id="DsT-Pt-uLz"/>
                             <constraint firstItem="2qg-La-BwQ" firstAttribute="leading" secondItem="5iT-dI-Y9H" secondAttribute="leading" id="EnY-e1-7ry"/>
                             <constraint firstItem="2qg-La-BwQ" firstAttribute="trailing" secondItem="5iT-dI-Y9H" secondAttribute="trailing" id="GYm-7F-haW"/>
-                            <constraint firstItem="HSU-Sc-9cN" firstAttribute="leading" secondItem="5iT-dI-Y9H" secondAttribute="leading" id="OaW-i6-ADJ"/>
-                            <constraint firstItem="HSU-Sc-9cN" firstAttribute="centerX" secondItem="BCn-qv-P3t" secondAttribute="centerX" id="yRB-o1-WQ5"/>
-                            <constraint firstItem="2qg-La-BwQ" firstAttribute="top" secondItem="HSU-Sc-9cN" secondAttribute="bottom" constant="1" id="yUJ-Ly-C80"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="探索" image="magnifyingglass" catalog="system" id="4na-w9-zek"/>
+                    <navigationItem key="navigationItem" title="探索" id="P9P-6j-cVI"/>
                     <connections>
                         <outlet property="departureDateTextField" destination="1Vq-7z-GNQ" id="82D-gj-6qT"/>
                         <outlet property="departureLocationTextField" destination="2gL-L9-8jp" id="Zmy-WJ-egi"/>
                         <outlet property="itineraryPreferences" destination="ftY-36-sge" id="bm5-O8-pXD"/>
-                        <outlet property="itineraryTextField" destination="ftY-36-sge" id="gKf-bT-2BV"/>
+                        <outlet property="itineraryTextField" destination="ftY-36-sge" id="9Fx-pC-BOR"/>
                         <outlet property="returnDateTextField" destination="6HH-87-7V3" id="6gW-Va-9nr"/>
                         <outlet property="returnLocationTextField" destination="7eW-NR-QI5" id="qkk-IH-lQc"/>
                         <outlet property="scrollView" destination="2qg-La-BwQ" id="j43-HN-52s"/>
                         <outlet property="transportTextField" destination="3kw-cY-O0J" id="Llw-Lq-849"/>
+                        <segue destination="531-c1-CYY" kind="show" identifier="showExploreDetail" id="EH8-ZF-Kpw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2JY-eL-7GV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="1SY-kP-obx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="829.7709923664122" y="-28.169014084507044"/>
+            <point key="canvasLocation" x="1756.4885496183206" y="-28.169014084507044"/>
+        </scene>
+        <!--Explore Detail Controller-->
+        <scene sceneID="8kx-zP-3Vr">
+            <objects>
+                <viewController id="531-c1-CYY" customClass="ExploreDetailController" customModule="WhereToGoToday" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MRE-kh-q0q">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="afN-Ba-uU3">
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="jeW-CK-EAu">
+                                <rect key="frame" x="0.0" y="298" width="393" height="471"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DetailCell" id="yyI-kR-hW4">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yyI-kR-hW4" id="eZZ-XL-HQy">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="KQd-PR-KZ2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="afN-Ba-uU3" firstAttribute="top" secondItem="KQd-PR-KZ2" secondAttribute="top" id="0O5-bf-3a8"/>
+                            <constraint firstItem="jeW-CK-EAu" firstAttribute="top" secondItem="KQd-PR-KZ2" secondAttribute="top" constant="195" id="AKf-Cz-Qn8"/>
+                            <constraint firstItem="afN-Ba-uU3" firstAttribute="trailing" secondItem="KQd-PR-KZ2" secondAttribute="trailing" id="EPk-Cs-2Df"/>
+                            <constraint firstItem="afN-Ba-uU3" firstAttribute="bottom" secondItem="KQd-PR-KZ2" secondAttribute="bottom" id="RXv-Xo-kMS"/>
+                            <constraint firstItem="jeW-CK-EAu" firstAttribute="leading" secondItem="KQd-PR-KZ2" secondAttribute="leading" id="eu5-eO-O1H"/>
+                            <constraint firstItem="jeW-CK-EAu" firstAttribute="trailing" secondItem="KQd-PR-KZ2" secondAttribute="trailing" id="jRW-CW-eb7"/>
+                            <constraint firstItem="afN-Ba-uU3" firstAttribute="leading" secondItem="KQd-PR-KZ2" secondAttribute="leading" id="qQv-uk-FlE"/>
+                            <constraint firstItem="jeW-CK-EAu" firstAttribute="bottom" secondItem="KQd-PR-KZ2" secondAttribute="bottom" id="syL-eC-1Rf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="aAz-Ho-fgb"/>
+                    <connections>
+                        <outlet property="mapView" destination="afN-Ba-uU3" id="H22-57-Y4p"/>
+                        <outlet property="tableView" destination="jeW-CK-EAu" id="Ifr-bl-4on"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lNC-fj-p6x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1754.9618320610687" y="676.76056338028172"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Yg6-eM-kTa">
@@ -464,7 +504,7 @@ Cg
                         <color key="selectedImageTintColor" red="0.93333333330000001" green="0.32549019610000002" blue="0.34509803919999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
-                        <segue destination="2fY-jW-Hdd" kind="relationship" relationship="viewControllers" id="gsW-Wa-1oJ"/>
+                        <segue destination="i2Q-76-zA2" kind="relationship" relationship="viewControllers" id="gsW-Wa-1oJ"/>
                         <segue destination="CHX-Oy-Nd3" kind="relationship" relationship="viewControllers" id="5Tg-Fw-XYb"/>
                         <segue destination="Yt6-0F-XFo" kind="relationship" relationship="viewControllers" id="eRZ-uv-VAZ"/>
                     </connections>
@@ -591,7 +631,7 @@ Cg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qeC-Oi-sb0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1696.9465648854962" y="-28.169014084507044"/>
+            <point key="canvasLocation" x="2623.6641221374043" y="-28.169014084507044"/>
         </scene>
         <!--帳戶-->
         <scene sceneID="aGH-r8-3KT">
@@ -625,9 +665,40 @@ Cg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I93-uf-NiO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2559.5419847328244" y="-28.169014084507044"/>
+            <point key="canvasLocation" x="3486.2595419847326" y="-28.169014084507044"/>
+        </scene>
+        <!--探索-->
+        <scene sceneID="Bj8-Ii-8ef">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="i2Q-76-zA2" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="探索" image="magnifyingglass" catalog="system" id="4na-w9-zek"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ayg-Ft-WpM">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2fY-jW-Hdd" kind="relationship" relationship="rootViewController" id="Lhe-ww-6l2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wDi-ev-msA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="829.7709923664122" y="-28.169014084507044"/>
         </scene>
     </scenes>
+    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="person.circle" catalog="system" width="128" height="123"/>
