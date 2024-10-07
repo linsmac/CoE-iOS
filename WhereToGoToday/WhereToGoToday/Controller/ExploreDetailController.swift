@@ -11,14 +11,14 @@ class ExploreDetailController: UIViewController, UITableViewDelegate, UITableVie
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableViewUnder: UITableView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var savaDetailButton: UIButton!
     
     var tripInfo: TripResponse?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         
         // 初始化地圖
         let initialLocation = CLLocation(latitude: 25.0330, longitude: 121.5654)
@@ -45,6 +45,10 @@ class ExploreDetailController: UIViewController, UITableViewDelegate, UITableVie
         self.tabBarController?.tabBar.isHidden = false
     }
     
+    @IBAction func segmentedControlChanged(_ sender: UISegmentedControl) {
+        tableView.reloadData()
+    }
+    
     func setupSegmentedControl() {
         segmentedControl.removeAllSegments()
         segmentedControl.insertSegment(withTitle: "行程總覽", at: 0, animated: false)
@@ -58,10 +62,6 @@ class ExploreDetailController: UIViewController, UITableViewDelegate, UITableVie
         segmentedControl.selectedSegmentIndex = 0
     }
     
-    @IBAction func segmentedControlChanged(_ sender: UISegmentedControl) {
-        tableView.reloadData()
-    }
-    
     func centerMapOnLocation(location: CLLocation) {
         let regionRadius: CLLocationDistance = 1000
         let coordinateRegion = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
@@ -73,6 +73,7 @@ class ExploreDetailController: UIViewController, UITableViewDelegate, UITableVie
         return 1
     }
     
+    //告訴 UITableView 每個 section 需要顯示多少列
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch segmentedControl.selectedSegmentIndex {
         case 0:
@@ -83,22 +84,33 @@ class ExploreDetailController: UIViewController, UITableViewDelegate, UITableVie
         }
     }
     
+    //設定每個 cell 內的資料
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let DetailCell = tableView.dequeueReusableCell(withIdentifier: "DetailCell", for: indexPath)
-        
-        switch segmentedControl.selectedSegmentIndex {
-        case 0:
-            // 行程總覽
+        if segmentedControl.selectedSegmentIndex == 0 {
+            // 使用總覽行程的自訂 Cell
+            let overviewCell = tableView.dequeueReusableCell(withIdentifier: "OverviewCell", for: indexPath) as! OverviewCell
             if let overview = tripInfo?.generatedTripInfo.tripOverview {
-                DetailCell.textLabel?.text = "地點: \(overview.location)\n開始日期: \(overview.startDate)\n結束日期: \(overview.endDate)"
+                overviewCell.locationLabel.text = overview.location
+                overviewCell.dateLabel.text = "\(overview.startDate) ~ \(overview.endDate)"
+                overviewCell.descriptionLabel.text = overview.description
+                overviewCell.descriptionLabel.numberOfLines = 0  // 允許自動換行
             }
-        default:
+            return overviewCell
+        } else {
+            // 使用每天行程的自訂 Cell
+            let dayCell = tableView.dequeueReusableCell(withIdentifier: "DayCell", for: indexPath) as! DayCell
             let dayIndex = segmentedControl.selectedSegmentIndex - 1
             let activity = tripInfo?.generatedTripInfo.days[dayIndex].activities[indexPath.row]
-            DetailCell.textLabel?.text = activity?.location
+            
+            dayCell.locationLabel.text = activity?.location
+            dayCell.activityLabel.text = activity?.activity
+            dayCell.timeLabel.text = "\(activity?.startTime ?? "N/A") - \(activity?.endTime ?? "N/A")"
+            dayCell.stayDurationLabel.text = activity?.stayDuration ?? "N/A"
+            dayCell.addressLabel.text = activity?.address ?? "N/A"
+            dayCell.transportationLabel.text = activity?.transportation?.mode ?? "N/A"
+            
+            return dayCell
         }
-
-        return DetailCell
     }
 
 

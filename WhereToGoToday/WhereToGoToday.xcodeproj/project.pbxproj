@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3034A8602CAFF3CC00337BCA /* OverviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3034A85F2CAFF3CC00337BCA /* OverviewCell.swift */; };
+		3034A8622CAFF3E300337BCA /* DayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3034A8612CAFF3E300337BCA /* DayCell.swift */; };
 		30875A8F2C6397F20024A03B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30875A8E2C6397F20024A03B /* AppDelegate.swift */; };
 		30875A912C6397F20024A03B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30875A902C6397F20024A03B /* SceneDelegate.swift */; };
 		30875A932C6397F20024A03B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30875A922C6397F20024A03B /* ViewController.swift */; };
@@ -43,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3034A85F2CAFF3CC00337BCA /* OverviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewCell.swift; sourceTree = "<group>"; };
+		3034A8612CAFF3E300337BCA /* DayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCell.swift; sourceTree = "<group>"; };
 		30875A8B2C6397F20024A03B /* WhereToGoToday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhereToGoToday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30875A8E2C6397F20024A03B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30875A902C6397F20024A03B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +94,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3034A8632CAFF3F200337BCA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				30C5F28B2C88407900E678F2 /* MyTripCell.swift */,
+				3034A85F2CAFF3CC00337BCA /* OverviewCell.swift */,
+				3034A8612CAFF3E300337BCA /* DayCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		30875A822C6397F20024A03B = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +127,7 @@
 		30875A8D2C6397F20024A03B /* WhereToGoToday */ = {
 			isa = PBXGroup;
 			children = (
+				3034A8632CAFF3F200337BCA /* Cell */,
 				30C5F2912C8857E000E678F2 /* Controller */,
 				30875A8E2C6397F20024A03B /* AppDelegate.swift */,
 				30875A902C6397F20024A03B /* SceneDelegate.swift */,
@@ -147,7 +162,6 @@
 			isa = PBXGroup;
 			children = (
 				30C5F2892C87FC4D00E678F2 /* MyTripsViewController.swift */,
-				30C5F28B2C88407900E678F2 /* MyTripCell.swift */,
 				30C5F2922C88583500E678F2 /* AccountViewController.swift */,
 				308B5F1C2C983BC00012214E /* IndexViewController.swift */,
 				30BB7A192CA41DE9004A0239 /* ExploreDetailController.swift */,
@@ -294,6 +308,7 @@
 			files = (
 				30BB7A1A2CA41DE9004A0239 /* ExploreDetailController.swift in Sources */,
 				30C5F2932C88583500E678F2 /* AccountViewController.swift in Sources */,
+				3034A8602CAFF3CC00337BCA /* OverviewCell.swift in Sources */,
 				30875A932C6397F20024A03B /* ViewController.swift in Sources */,
 				30F940AC2CAD10350000DACD /* TripModels.swift in Sources */,
 				308B5F1D2C983BC00012214E /* IndexViewController.swift in Sources */,
@@ -301,6 +316,7 @@
 				30875A8F2C6397F20024A03B /* AppDelegate.swift in Sources */,
 				30875A912C6397F20024A03B /* SceneDelegate.swift in Sources */,
 				30C5F28C2C88407900E678F2 /* MyTripCell.swift in Sources */,
+				3034A8622CAFF3E300337BCA /* DayCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
