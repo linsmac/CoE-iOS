@@ -101,14 +101,46 @@ class ExploreDetailController: UIViewController, UITableViewDelegate, UITableVie
             let dayCell = tableView.dequeueReusableCell(withIdentifier: "DayCell", for: indexPath) as! DayCell
             let dayIndex = segmentedControl.selectedSegmentIndex - 1
             let activity = tripInfo?.generatedTripInfo.days[dayIndex].activities[indexPath.row]
-            
-            dayCell.locationLabel.text = activity?.location
-            dayCell.activityLabel.text = activity?.activity
-            dayCell.timeLabel.text = "\(activity?.startTime ?? "N/A") - \(activity?.endTime ?? "N/A")"
-            dayCell.stayDurationLabel.text = activity?.stayDuration ?? "N/A"
-            dayCell.addressLabel.text = activity?.address ?? "N/A"
-            dayCell.transportationLabel.text = activity?.transportation?.mode ?? "N/A"
-            
+
+            // 設置活動資訊
+            dayCell.locationLabel.text = activity?.location ?? "N/A" // 如果為空白，顯示空白
+
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+            dateFormatter.locale = Locale(identifier: "en_US_POSIX") // 確保格式正確解析
+
+            let displayFormatter = DateFormatter()
+            displayFormatter.dateFormat = "HH:mm"  // 用於顯示時、分
+
+            if let startTimeString = activity?.startTime, let startDate = dateFormatter.date(from: startTimeString) {
+                dayCell.startTimeLabel.text = displayFormatter.string(from: startDate)
+            } else {
+                dayCell.startTimeLabel.text = "N/A"
+            }
+
+            if let endTimeString = activity?.endTime, let endDate = dateFormatter.date(from: endTimeString) {
+                dayCell.endTimeLabel.text = displayFormatter.string(from: endDate)
+            } else {
+                dayCell.endTimeLabel.text = "N/A"
+            }
+
+            // 設定停留時間，當為 nil 時顯示 0
+            dayCell.stayDurationLabel.text = "\(activity?.stayDuration ?? "0")分鐘"
+            dayCell.addressLabel.text = activity?.address ?? ""
+
+            // 設定交通方式和行駛時間
+            if let transportation = activity?.transportation {
+                dayCell.transportationModeLabel.text = "交通方式: \(transportation.mode)" // 顯示交通方式
+                if let travelTime = transportation.travelTime, let timeInMinutes = Int(travelTime) {
+                    dayCell.travelTimeLabel.text = "行駛時間: \(timeInMinutes) 分鐘" // 顯示行駛時間
+                } else {
+                    dayCell.travelTimeLabel.text = "行駛時間: N/A"
+                }
+            } else {
+                dayCell.transportationModeLabel.text = "交通方式: N/A"
+                dayCell.travelTimeLabel.text = "行駛時間: N/A"
+            }
+
             return dayCell
         }
     }
