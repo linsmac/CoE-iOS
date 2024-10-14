@@ -140,6 +140,8 @@ class ExploreDetailController: UIViewController, UITableViewDelegate, UITableVie
                 dayCell.transportationModeLabel.text = "交通方式: N/A"
                 dayCell.travelTimeLabel.text = "行駛時間: N/A"
             }
+            
+            
 
             return dayCell
         }
