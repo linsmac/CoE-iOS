@@ -30,8 +30,8 @@
             filePath = "WhereToGoToday/Controller/IndexViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
             landmarkName = "exploreButtonTapped(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -140,6 +140,36 @@
                   startingLineNumber = "15"
                   endingLineNumber = "15"
                   offsetFromSymbolStart = "180">
+               </Location>
+               <Location
+                  uuid = "AF0BA7C3-356D-4747-8C22-AD4E388FD430 - e421cbed619f0781"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WhereToGoToday.ExploreDetailController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; WhereToGoToday.ExploreDetailController"
+                  moduleName = "WhereToGoToday"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gorgaisyeh/ella/CoE-iOS-new/WhereToGoToday/WhereToGoToday/Controller/ExploreDetailController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "112">
+               </Location>
+               <Location
+                  uuid = "AF0BA7C3-356D-4747-8C22-AD4E388FD430 - 74115de87cef696d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WhereToGoToday.ExploreDetailController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;WhereToGoToday.ExploreDetailController&gt;"
+                  moduleName = "WhereToGoToday"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gorgaisyeh/ella/CoE-iOS-new/WhereToGoToday/WhereToGoToday/Controller/ExploreDetailController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "99">
                </Location>
             </Locations>
          </BreakpointContent>

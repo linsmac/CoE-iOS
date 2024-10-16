@@ -24,6 +24,9 @@
 		30C5F28A2C87FC4D00E678F2 /* MyTripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C5F2892C87FC4D00E678F2 /* MyTripsViewController.swift */; };
 		30C5F28C2C88407900E678F2 /* MyTripCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C5F28B2C88407900E678F2 /* MyTripCell.swift */; };
 		30C5F2932C88583500E678F2 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C5F2922C88583500E678F2 /* AccountViewController.swift */; };
+		30CEDD602CBF985300EFEA92 /* UserNameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CEDD5F2CBF985300EFEA92 /* UserNameController.swift */; };
+		30CEDD652CBFB76900EFEA92 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CEDD642CBFB76900EFEA92 /* CoreDataStack.swift */; };
+		30CEDD6C2CBFBA5900EFEA92 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 30CEDD6A2CBFBA5900EFEA92 /* Model.xcdatamodeld */; };
 		30F940AC2CAD10350000DACD /* TripModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F940AB2CAD10350000DACD /* TripModels.swift */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +68,9 @@
 		30C5F2892C87FC4D00E678F2 /* MyTripsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTripsViewController.swift; sourceTree = "<group>"; };
 		30C5F28B2C88407900E678F2 /* MyTripCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTripCell.swift; sourceTree = "<group>"; };
 		30C5F2922C88583500E678F2 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		30CEDD5F2CBF985300EFEA92 /* UserNameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameController.swift; sourceTree = "<group>"; };
+		30CEDD642CBFB76900EFEA92 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		30CEDD6B2CBFBA5900EFEA92 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		30F940AB2CAD10350000DACD /* TripModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripModels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,6 +143,8 @@
 				30875A992C6397F80024A03B /* LaunchScreen.storyboard */,
 				30875A9C2C6397F80024A03B /* Info.plist */,
 				30F940AB2CAD10350000DACD /* TripModels.swift */,
+				30CEDD642CBFB76900EFEA92 /* CoreDataStack.swift */,
+				30CEDD6A2CBFBA5900EFEA92 /* Model.xcdatamodeld */,
 			);
 			path = WhereToGoToday;
 			sourceTree = "<group>";
@@ -165,6 +173,7 @@
 				30C5F2922C88583500E678F2 /* AccountViewController.swift */,
 				308B5F1C2C983BC00012214E /* IndexViewController.swift */,
 				30BB7A192CA41DE9004A0239 /* ExploreDetailController.swift */,
+				30CEDD5F2CBF985300EFEA92 /* UserNameController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -309,9 +318,12 @@
 				30BB7A1A2CA41DE9004A0239 /* ExploreDetailController.swift in Sources */,
 				30C5F2932C88583500E678F2 /* AccountViewController.swift in Sources */,
 				3034A8602CAFF3CC00337BCA /* OverviewCell.swift in Sources */,
+				30CEDD6C2CBFBA5900EFEA92 /* Model.xcdatamodeld in Sources */,
+				30CEDD602CBF985300EFEA92 /* UserNameController.swift in Sources */,
 				30875A932C6397F20024A03B /* ViewController.swift in Sources */,
 				30F940AC2CAD10350000DACD /* TripModels.swift in Sources */,
 				308B5F1D2C983BC00012214E /* IndexViewController.swift in Sources */,
+				30CEDD652CBFB76900EFEA92 /* CoreDataStack.swift in Sources */,
 				30C5F28A2C87FC4D00E678F2 /* MyTripsViewController.swift in Sources */,
 				30875A8F2C6397F20024A03B /* AppDelegate.swift in Sources */,
 				30875A912C6397F20024A03B /* SceneDelegate.swift in Sources */,
@@ -682,6 +694,19 @@
 			productName = IQKeyboardManagerSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		30CEDD6A2CBFBA5900EFEA92 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				30CEDD6B2CBFBA5900EFEA92 /* Model.xcdatamodel */,
+			);
+			currentVersion = 30CEDD6B2CBFBA5900EFEA92 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 30875A832C6397F20024A03B /* Project object */;
 }

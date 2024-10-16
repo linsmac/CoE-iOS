@@ -17,6 +17,15 @@ class IndexViewController: UIViewController {
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let savedName = UserDefaults.standard.string(forKey: "userName") {
+            print("目前儲存的使用者名稱是: \(savedName)")
+            
+//            UserDefaults.standard.removeObject(forKey: "userName")
+//            print("使用者名稱已刪除")
+        } else {
+            print("尚未儲存使用者名稱")
+        }
     }
  
     // MARK: - Action for the "Explore" button
