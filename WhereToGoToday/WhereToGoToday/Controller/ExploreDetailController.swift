@@ -75,6 +75,12 @@ class ExploreDetailController: UIViewController, UITableViewDelegate, UITableVie
             // 切換到「我的行程」頁面
             if let tabBarController = self.tabBarController {
                 tabBarController.selectedIndex = 1 // 假設「我的行程」在第二個頁籤
+                
+                // 重設導航控制器的堆疊，讓首頁為根視圖
+                if let navController = tabBarController.viewControllers?.first as? UINavigationController {
+                    navController.popToRootViewController(animated: false)
+                }
+                
             }
         } catch {
             print("Failed to save trip: \(error)")
