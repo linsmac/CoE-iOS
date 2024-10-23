@@ -1,16 +1,19 @@
-//
-//  MyTripViewController.swift
-//  WhereToGoToday
-//
-//  Created by Gorgais Yeh on 2024/9/4.
-//
 
 import UIKit
+import CoreData
 
 
 class MyTripsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var myTripList: UITableView!
+    
+    struct Trip {
+        let name: String
+        let date: String
+        let image: UIImage
+    }
+
+    var trips: [Trip] = []
     
     //表格載入的起點
     override func viewDidLoad() {
@@ -22,16 +25,11 @@ class MyTripsViewController: UIViewController, UITableViewDataSource, UITableVie
         
     }
     
-    struct Trip {
-        let name: String
-        let date: String
-        let image: UIImage
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // 每次顯示頁面時重新加載資料
+        fetchTrips() // 假設 fetchTrips() 方法用於載入最新的行程資料
     }
-
-    var trips: [Trip] = [
-        Trip(name: "Summer Vacation", date: "2024-06-01 - 2024-06-10", image: UIImage(named: "trip1") ?? UIImage()),
-        Trip(name: "Winter Wonderland", date: "2024-12-15 - 2024-12-22", image: UIImage(named: "trip2") ?? UIImage())
-    ]
 
 
     //表格載入行程數量
@@ -48,12 +46,39 @@ class MyTripsViewController: UIViewController, UITableViewDataSource, UITableVie
         cell.dateLabel.text = trip.date
         return cell
     }
-}
-
-
-
-
     
+    func fetchTrips() {
+        let context = CoreDataManager.shared.context
+        let fetchRequest: NSFetchRequest<TripEntity> = TripEntity.fetchRequest()
+
+        do {
+            let fetchedTrips = try context.fetch(fetchRequest)
+            
+            // 設定日期格式化器
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd" // 只顯示年月日
+
+            // 將 `TripEntity` 轉換為 `MyTripsViewController.Trip`
+            trips = fetchedTrips.map { tripEntity in
+                let startDateString = tripEntity.startDate.flatMap { dateFormatter.string(from: $0) } ?? "Unknown"
+                let endDateString = tripEntity.endDate.flatMap { dateFormatter.string(from: $0) } ?? "Unknown"
+                let dateString = "\(startDateString) - \(endDateString)"
+                
+                return MyTripsViewController.Trip(
+                    name: tripEntity.location ?? "Unknown",
+                    date: dateString,
+                    image: UIImage(named: "defaultTripImage") ?? UIImage() // 替換為實際圖片邏輯
+                )
+            }
+            
+            myTripList.reloadData()
+            
+        } catch {
+            print("Failed to fetch trips: \(error)")
+        }
+    }
 
 
+
+}
 

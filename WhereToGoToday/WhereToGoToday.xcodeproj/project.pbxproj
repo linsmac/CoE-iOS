@@ -25,8 +25,8 @@
 		30C5F28C2C88407900E678F2 /* MyTripCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C5F28B2C88407900E678F2 /* MyTripCell.swift */; };
 		30C5F2932C88583500E678F2 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C5F2922C88583500E678F2 /* AccountViewController.swift */; };
 		30CEDD602CBF985300EFEA92 /* UserNameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CEDD5F2CBF985300EFEA92 /* UserNameController.swift */; };
-		30CEDD652CBFB76900EFEA92 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CEDD642CBFB76900EFEA92 /* CoreDataStack.swift */; };
-		30CEDD6C2CBFBA5900EFEA92 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 30CEDD6A2CBFBA5900EFEA92 /* Model.xcdatamodeld */; };
+		30CEDDA02CC5553600EFEA92 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 30CEDD9E2CC5553600EFEA92 /* DataModel.xcdatamodeld */; };
+		30CEDDA22CC55BC400EFEA92 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CEDDA12CC55BC400EFEA92 /* CoreDataManager.swift */; };
 		30F940AC2CAD10350000DACD /* TripModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F940AB2CAD10350000DACD /* TripModels.swift */; };
 /* End PBXBuildFile section */
 
@@ -69,8 +69,8 @@
 		30C5F28B2C88407900E678F2 /* MyTripCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTripCell.swift; sourceTree = "<group>"; };
 		30C5F2922C88583500E678F2 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		30CEDD5F2CBF985300EFEA92 /* UserNameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameController.swift; sourceTree = "<group>"; };
-		30CEDD642CBFB76900EFEA92 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
-		30CEDD6B2CBFBA5900EFEA92 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		30CEDD9F2CC5553600EFEA92 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		30CEDDA12CC55BC400EFEA92 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		30F940AB2CAD10350000DACD /* TripModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripModels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,6 +113,7 @@
 		30875A822C6397F20024A03B = {
 			isa = PBXGroup;
 			children = (
+				30CEDD9E2CC5553600EFEA92 /* DataModel.xcdatamodeld */,
 				30875A8D2C6397F20024A03B /* WhereToGoToday */,
 				30875AA42C6397F80024A03B /* WhereToGoTodayTests */,
 				30875AAE2C6397F80024A03B /* WhereToGoTodayUITests */,
@@ -143,8 +144,7 @@
 				30875A992C6397F80024A03B /* LaunchScreen.storyboard */,
 				30875A9C2C6397F80024A03B /* Info.plist */,
 				30F940AB2CAD10350000DACD /* TripModels.swift */,
-				30CEDD642CBFB76900EFEA92 /* CoreDataStack.swift */,
-				30CEDD6A2CBFBA5900EFEA92 /* Model.xcdatamodeld */,
+				30CEDDA12CC55BC400EFEA92 /* CoreDataManager.swift */,
 			);
 			path = WhereToGoToday;
 			sourceTree = "<group>";
@@ -318,16 +318,16 @@
 				30BB7A1A2CA41DE9004A0239 /* ExploreDetailController.swift in Sources */,
 				30C5F2932C88583500E678F2 /* AccountViewController.swift in Sources */,
 				3034A8602CAFF3CC00337BCA /* OverviewCell.swift in Sources */,
-				30CEDD6C2CBFBA5900EFEA92 /* Model.xcdatamodeld in Sources */,
 				30CEDD602CBF985300EFEA92 /* UserNameController.swift in Sources */,
 				30875A932C6397F20024A03B /* ViewController.swift in Sources */,
 				30F940AC2CAD10350000DACD /* TripModels.swift in Sources */,
 				308B5F1D2C983BC00012214E /* IndexViewController.swift in Sources */,
-				30CEDD652CBFB76900EFEA92 /* CoreDataStack.swift in Sources */,
 				30C5F28A2C87FC4D00E678F2 /* MyTripsViewController.swift in Sources */,
 				30875A8F2C6397F20024A03B /* AppDelegate.swift in Sources */,
 				30875A912C6397F20024A03B /* SceneDelegate.swift in Sources */,
+				30CEDDA02CC5553600EFEA92 /* DataModel.xcdatamodeld in Sources */,
 				30C5F28C2C88407900E678F2 /* MyTripCell.swift in Sources */,
+				30CEDDA22CC55BC400EFEA92 /* CoreDataManager.swift in Sources */,
 				3034A8622CAFF3E300337BCA /* DayCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -696,13 +696,13 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		30CEDD6A2CBFBA5900EFEA92 /* Model.xcdatamodeld */ = {
+		30CEDD9E2CC5553600EFEA92 /* DataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				30CEDD6B2CBFBA5900EFEA92 /* Model.xcdatamodel */,
+				30CEDD9F2CC5553600EFEA92 /* DataModel.xcdatamodel */,
 			);
-			currentVersion = 30CEDD6B2CBFBA5900EFEA92 /* Model.xcdatamodel */;
-			path = Model.xcdatamodeld;
+			currentVersion = 30CEDD9F2CC5553600EFEA92 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

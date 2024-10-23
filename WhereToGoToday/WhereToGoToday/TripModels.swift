@@ -73,3 +73,9 @@ struct Transportation: Codable {
         case travelTime = "travel_time"
     }
 }
+
+struct TripDay {
+    let day: String
+    let activities: [String]
+}
+

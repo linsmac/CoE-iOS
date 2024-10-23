@@ -66,7 +66,7 @@ class IndexViewController: UIViewController {
 
     // 呼叫 API
     func callAPI(trip_theme: String, transportation: String, departure_time: String, return_time: String, departure_location: String, return_location: String) {
-        let urlString = "https://fastapi-production-a532.up.railway.app/Trip/"
+        let urlString = "https://fastapi-x70s.onrender.com/Trip/"
         guard let url = URL(string: urlString) else { return }
 
         var request = URLRequest(url: url)
