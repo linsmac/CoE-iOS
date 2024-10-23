@@ -849,13 +849,13 @@ Cg
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TripName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bho-Mb-2kI">
-                                                    <rect key="frame" x="20" y="40.333333333333336" width="78" height="21.666666666666664"/>
+                                                    <rect key="frame" x="25" y="40.333333333333336" width="78" height="21.666666666666664"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TripDate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1z-Bo-ZWr">
-                                                    <rect key="frame" x="20" y="72" width="55" height="17"/>
+                                                    <rect key="frame" x="25" y="72" width="68" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -871,19 +871,19 @@ Cg
                                                 </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="kTt-m1-Dfq" firstAttribute="leading" secondItem="Bho-Mb-2kI" secondAttribute="leading" constant="-20" id="27u-Aw-tk2"/>
                                                 <constraint firstItem="kTt-m1-Dfq" firstAttribute="leading" secondItem="X0P-4F-he8" secondAttribute="leading" constant="5" id="77l-Oh-Xjw"/>
+                                                <constraint firstItem="d1z-Bo-ZWr" firstAttribute="leading" secondItem="Bho-Mb-2kI" secondAttribute="leading" id="817-T9-3yw"/>
                                                 <constraint firstAttribute="trailing" secondItem="kTt-m1-Dfq" secondAttribute="trailing" constant="5" id="C6g-a9-6EC"/>
                                                 <constraint firstItem="kTt-m1-Dfq" firstAttribute="top" secondItem="X0P-4F-he8" secondAttribute="top" constant="5" id="Mob-on-ecf"/>
                                                 <constraint firstAttribute="bottom" secondItem="kTt-m1-Dfq" secondAttribute="bottom" constant="5" id="OHj-QB-YMm"/>
+                                                <constraint firstItem="kTt-m1-Dfq" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="d1z-Bo-ZWr" secondAttribute="trailing" constant="275" id="OZV-eg-A0q"/>
                                                 <constraint firstAttribute="trailing" secondItem="MIR-8Z-yhF" secondAttribute="trailing" constant="5" id="RHn-Ps-boi"/>
                                                 <constraint firstItem="MIR-8Z-yhF" firstAttribute="top" secondItem="X0P-4F-he8" secondAttribute="top" constant="5" id="aAN-mg-zUM"/>
                                                 <constraint firstItem="d1z-Bo-ZWr" firstAttribute="top" secondItem="Bho-Mb-2kI" secondAttribute="bottom" constant="10" id="aJw-Y5-sWl"/>
-                                                <constraint firstItem="d1z-Bo-ZWr" firstAttribute="leading" secondItem="X0P-4F-he8" secondAttribute="leadingMargin" id="d4L-kf-IxJ"/>
+                                                <constraint firstItem="kTt-m1-Dfq" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Bho-Mb-2kI" secondAttribute="trailing" constant="20" id="dAm-Vs-1MY"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="d1z-Bo-ZWr" secondAttribute="bottom" constant="10" id="msQ-kb-dvx"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="d1z-Bo-ZWr" secondAttribute="trailing" constant="20" symbolic="YES" id="nPg-bL-zgC"/>
-                                                <constraint firstItem="Bho-Mb-2kI" firstAttribute="leading" secondItem="X0P-4F-he8" secondAttribute="leadingMargin" id="qdD-mp-U0Q"/>
                                                 <constraint firstItem="MIR-8Z-yhF" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="X0P-4F-he8" secondAttribute="leading" constant="20" symbolic="YES" id="rdx-3g-b6E"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Bho-Mb-2kI" secondAttribute="trailing" constant="20" symbolic="YES" id="u8r-y7-zTJ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
