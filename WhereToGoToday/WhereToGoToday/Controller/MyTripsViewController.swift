@@ -44,11 +44,18 @@ class MyTripsViewController: UIViewController, UITableViewDataSource, UITableVie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyTripCell", for: indexPath) as! MyTripCell
         let trip = tripManager.getTrips()[indexPath.row]
-        cell.backgroundImageView.image = trip.image
+        cell.backgroundImageView.image = getRandomBackgroundImage()
         cell.nameLabel.text = trip.name
         cell.dateLabel.text = trip.date
         return cell
     }
+    
+    func getRandomBackgroundImage() -> UIImage {
+        let imageNames = ["background1", "background2", "background3"] // 替換為實際圖片名稱
+        let randomIndex = Int.random(in: 0..<imageNames.count)
+        return UIImage(named: imageNames[randomIndex]) ?? UIImage()
+    }
+
 
 }
 

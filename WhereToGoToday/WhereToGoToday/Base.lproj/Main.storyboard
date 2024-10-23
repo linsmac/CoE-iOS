@@ -842,23 +842,29 @@ Cg
                                             <rect key="frame" x="0.0" y="0.0" width="373" height="110"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kTt-m1-Dfq">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kTt-m1-Dfq">
                                                     <rect key="frame" x="5" y="5" width="363" height="100"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="100" id="YUA-dN-PMd"/>
                                                     </constraints>
                                                 </imageView>
+                                                <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ahi-Kf-ixN">
+                                                    <rect key="frame" x="5" y="5" width="363" height="100"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TripName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bho-Mb-2kI">
-                                                    <rect key="frame" x="25" y="40.333333333333336" width="78" height="21.666666666666664"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
+                                                    <rect key="frame" x="25.000000000000007" y="40.333333333333336" width="83.666666666666686" height="21.666666666666664"/>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TripDate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1z-Bo-ZWr">
                                                     <rect key="frame" x="25" y="72" width="68" height="17"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MIR-8Z-yhF">
                                                     <rect key="frame" x="330" y="5" width="38" height="21"/>
@@ -875,6 +881,7 @@ Cg
                                                 <constraint firstItem="kTt-m1-Dfq" firstAttribute="leading" secondItem="X0P-4F-he8" secondAttribute="leading" constant="5" id="77l-Oh-Xjw"/>
                                                 <constraint firstItem="d1z-Bo-ZWr" firstAttribute="leading" secondItem="Bho-Mb-2kI" secondAttribute="leading" id="817-T9-3yw"/>
                                                 <constraint firstAttribute="trailing" secondItem="kTt-m1-Dfq" secondAttribute="trailing" constant="5" id="C6g-a9-6EC"/>
+                                                <constraint firstItem="ahi-Kf-ixN" firstAttribute="top" secondItem="kTt-m1-Dfq" secondAttribute="top" id="IdQ-UX-QBc"/>
                                                 <constraint firstItem="kTt-m1-Dfq" firstAttribute="top" secondItem="X0P-4F-he8" secondAttribute="top" constant="5" id="Mob-on-ecf"/>
                                                 <constraint firstAttribute="bottom" secondItem="kTt-m1-Dfq" secondAttribute="bottom" constant="5" id="OHj-QB-YMm"/>
                                                 <constraint firstItem="kTt-m1-Dfq" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="d1z-Bo-ZWr" secondAttribute="trailing" constant="275" id="OZV-eg-A0q"/>
@@ -882,8 +889,11 @@ Cg
                                                 <constraint firstItem="MIR-8Z-yhF" firstAttribute="top" secondItem="X0P-4F-he8" secondAttribute="top" constant="5" id="aAN-mg-zUM"/>
                                                 <constraint firstItem="d1z-Bo-ZWr" firstAttribute="top" secondItem="Bho-Mb-2kI" secondAttribute="bottom" constant="10" id="aJw-Y5-sWl"/>
                                                 <constraint firstItem="kTt-m1-Dfq" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Bho-Mb-2kI" secondAttribute="trailing" constant="20" id="dAm-Vs-1MY"/>
+                                                <constraint firstItem="ahi-Kf-ixN" firstAttribute="leading" secondItem="kTt-m1-Dfq" secondAttribute="leading" id="gD9-kG-0kf"/>
+                                                <constraint firstItem="ahi-Kf-ixN" firstAttribute="bottom" secondItem="kTt-m1-Dfq" secondAttribute="bottom" id="ghh-GR-4Si"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="d1z-Bo-ZWr" secondAttribute="bottom" constant="10" id="msQ-kb-dvx"/>
                                                 <constraint firstItem="MIR-8Z-yhF" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="X0P-4F-he8" secondAttribute="leading" constant="20" symbolic="YES" id="rdx-3g-b6E"/>
+                                                <constraint firstItem="ahi-Kf-ixN" firstAttribute="trailing" secondItem="kTt-m1-Dfq" secondAttribute="trailing" id="txo-dh-2BG"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -999,7 +1009,7 @@ Cg
             <point key="canvasLocation" x="829.7709923664122" y="-28.169014084507044"/>
         </scene>
     </scenes>
-    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="person.circle" catalog="system" width="128" height="123"/>
