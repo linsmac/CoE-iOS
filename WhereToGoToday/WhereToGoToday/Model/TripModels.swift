@@ -74,8 +74,3 @@ struct Transportation: Codable {
     }
 }
 
-struct TripDay {
-    let day: String
-    let activities: [String]
-}
-

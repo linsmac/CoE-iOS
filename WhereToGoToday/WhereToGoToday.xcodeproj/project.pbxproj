@@ -20,6 +20,8 @@
 		30875AB22C6397F80024A03B /* WhereToGoTodayUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30875AB12C6397F80024A03B /* WhereToGoTodayUITestsLaunchTests.swift */; };
 		308B5F1D2C983BC00012214E /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308B5F1C2C983BC00012214E /* IndexViewController.swift */; };
 		308B5F202C9AC57B0012214E /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 308B5F1F2C9AC57B0012214E /* IQKeyboardManagerSwift */; };
+		3091FCDD2CC8F41B00446748 /* TripAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3091FCDC2CC8F41B00446748 /* TripAPIManager.swift */; };
+		3091FCE02CC8FB8700446748 /* MyTripManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3091FCDF2CC8FB8700446748 /* MyTripManager.swift */; };
 		30BB7A1A2CA41DE9004A0239 /* ExploreDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BB7A192CA41DE9004A0239 /* ExploreDetailController.swift */; };
 		30C5F28A2C87FC4D00E678F2 /* MyTripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C5F2892C87FC4D00E678F2 /* MyTripsViewController.swift */; };
 		30C5F28C2C88407900E678F2 /* MyTripCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C5F28B2C88407900E678F2 /* MyTripCell.swift */; };
@@ -64,6 +66,8 @@
 		30875AAF2C6397F80024A03B /* WhereToGoTodayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereToGoTodayUITests.swift; sourceTree = "<group>"; };
 		30875AB12C6397F80024A03B /* WhereToGoTodayUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereToGoTodayUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		308B5F1C2C983BC00012214E /* IndexViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexViewController.swift; sourceTree = "<group>"; };
+		3091FCDC2CC8F41B00446748 /* TripAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripAPIManager.swift; sourceTree = "<group>"; };
+		3091FCDF2CC8FB8700446748 /* MyTripManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTripManager.swift; sourceTree = "<group>"; };
 		30BB7A192CA41DE9004A0239 /* ExploreDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreDetailController.swift; sourceTree = "<group>"; };
 		30C5F2892C87FC4D00E678F2 /* MyTripsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTripsViewController.swift; sourceTree = "<group>"; };
 		30C5F28B2C88407900E678F2 /* MyTripCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTripCell.swift; sourceTree = "<group>"; };
@@ -134,6 +138,7 @@
 		30875A8D2C6397F20024A03B /* WhereToGoToday */ = {
 			isa = PBXGroup;
 			children = (
+				3091FCDE2CC8FAC800446748 /* Model */,
 				3034A8632CAFF3F200337BCA /* Cell */,
 				30C5F2912C8857E000E678F2 /* Controller */,
 				30875A8E2C6397F20024A03B /* AppDelegate.swift */,
@@ -143,8 +148,6 @@
 				30875A972C6397F80024A03B /* Assets.xcassets */,
 				30875A992C6397F80024A03B /* LaunchScreen.storyboard */,
 				30875A9C2C6397F80024A03B /* Info.plist */,
-				30F940AB2CAD10350000DACD /* TripModels.swift */,
-				30CEDDA12CC55BC400EFEA92 /* CoreDataManager.swift */,
 			);
 			path = WhereToGoToday;
 			sourceTree = "<group>";
@@ -164,6 +167,17 @@
 				30875AB12C6397F80024A03B /* WhereToGoTodayUITestsLaunchTests.swift */,
 			);
 			path = WhereToGoTodayUITests;
+			sourceTree = "<group>";
+		};
+		3091FCDE2CC8FAC800446748 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				30F940AB2CAD10350000DACD /* TripModels.swift */,
+				30CEDDA12CC55BC400EFEA92 /* CoreDataManager.swift */,
+				3091FCDC2CC8F41B00446748 /* TripAPIManager.swift */,
+				3091FCDF2CC8FB8700446748 /* MyTripManager.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		30C5F2912C8857E000E678F2 /* Controller */ = {
@@ -326,8 +340,10 @@
 				30875A8F2C6397F20024A03B /* AppDelegate.swift in Sources */,
 				30875A912C6397F20024A03B /* SceneDelegate.swift in Sources */,
 				30CEDDA02CC5553600EFEA92 /* DataModel.xcdatamodeld in Sources */,
+				3091FCDD2CC8F41B00446748 /* TripAPIManager.swift in Sources */,
 				30C5F28C2C88407900E678F2 /* MyTripCell.swift in Sources */,
 				30CEDDA22CC55BC400EFEA92 /* CoreDataManager.swift in Sources */,
+				3091FCE02CC8FB8700446748 /* MyTripManager.swift in Sources */,
 				3034A8622CAFF3E300337BCA /* DayCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
