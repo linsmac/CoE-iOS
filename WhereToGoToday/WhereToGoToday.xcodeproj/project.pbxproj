@@ -22,6 +22,7 @@
 		308B5F202C9AC57B0012214E /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 308B5F1F2C9AC57B0012214E /* IQKeyboardManagerSwift */; };
 		3091FCDD2CC8F41B00446748 /* TripAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3091FCDC2CC8F41B00446748 /* TripAPIManager.swift */; };
 		3091FCE02CC8FB8700446748 /* MyTripManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3091FCDF2CC8FB8700446748 /* MyTripManager.swift */; };
+		3091FCE22CC9308A00446748 /* MyTripExploreDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3091FCE12CC9308900446748 /* MyTripExploreDetailController.swift */; };
 		30BB7A1A2CA41DE9004A0239 /* ExploreDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BB7A192CA41DE9004A0239 /* ExploreDetailController.swift */; };
 		30C5F28A2C87FC4D00E678F2 /* MyTripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C5F2892C87FC4D00E678F2 /* MyTripsViewController.swift */; };
 		30C5F28C2C88407900E678F2 /* MyTripCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C5F28B2C88407900E678F2 /* MyTripCell.swift */; };
@@ -68,6 +69,7 @@
 		308B5F1C2C983BC00012214E /* IndexViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexViewController.swift; sourceTree = "<group>"; };
 		3091FCDC2CC8F41B00446748 /* TripAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripAPIManager.swift; sourceTree = "<group>"; };
 		3091FCDF2CC8FB8700446748 /* MyTripManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTripManager.swift; sourceTree = "<group>"; };
+		3091FCE12CC9308900446748 /* MyTripExploreDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTripExploreDetailController.swift; sourceTree = "<group>"; };
 		30BB7A192CA41DE9004A0239 /* ExploreDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreDetailController.swift; sourceTree = "<group>"; };
 		30C5F2892C87FC4D00E678F2 /* MyTripsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTripsViewController.swift; sourceTree = "<group>"; };
 		30C5F28B2C88407900E678F2 /* MyTripCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTripCell.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 				308B5F1C2C983BC00012214E /* IndexViewController.swift */,
 				30BB7A192CA41DE9004A0239 /* ExploreDetailController.swift */,
 				30CEDD5F2CBF985300EFEA92 /* UserNameController.swift */,
+				3091FCE12CC9308900446748 /* MyTripExploreDetailController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				30C5F2932C88583500E678F2 /* AccountViewController.swift in Sources */,
 				3034A8602CAFF3CC00337BCA /* OverviewCell.swift in Sources */,
 				30CEDD602CBF985300EFEA92 /* UserNameController.swift in Sources */,
+				3091FCE22CC9308A00446748 /* MyTripExploreDetailController.swift in Sources */,
 				30875A932C6397F20024A03B /* ViewController.swift in Sources */,
 				30F940AC2CAD10350000DACD /* TripModels.swift in Sources */,
 				308B5F1D2C983BC00012214E /* IndexViewController.swift in Sources */,

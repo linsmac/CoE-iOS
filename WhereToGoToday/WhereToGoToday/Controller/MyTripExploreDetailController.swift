@@ -1,24 +1,22 @@
 import UIKit
 import MapKit
-import CoreData
 
-class ExploreDetailController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MyTripExploreDetailController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tableViewUnder: UITableView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
-    @IBOutlet weak var saveDetailButton: UIButton!
-    
+      
     var tripInfo: TripResponse?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
     }
     
-    private func setupView() {
-        initializeMap()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        initializeMap() // 確保在畫面完全載入後再初始化地圖
         setupSegmentedControl()
         setupTableView()
         print("初始化詳細頁面")
@@ -26,6 +24,10 @@ class ExploreDetailController: UIViewController, UITableViewDelegate, UITableVie
     
     //初始化地圖
     private func initializeMap() {
+        guard let mapView = mapView else {
+            print("mapView is nil")
+            return
+        }
         let initialLocation = CLLocation(latitude: 25.0330, longitude: 121.5654)
         let regionRadius: CLLocationDistance = 1000
         let coordinateRegion = MKCoordinateRegion(center: initialLocation.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
@@ -62,29 +64,6 @@ class ExploreDetailController: UIViewController, UITableViewDelegate, UITableVie
     
     @IBAction func segmentedControlChanged(_ sender: UISegmentedControl) {
         tableView.reloadData()
-    }
-    
-    @IBAction func saveDetailButtonTapped(_ sender: UIButton) {
-        guard let tripInfo = tripInfo else { return }
-
-        do {
-            // 使用 TripDataManager 來保存行程資料
-            try CoreDataManager.shared.saveTrip(tripInfo: tripInfo)
-            print("Trip saved successfully!")
-            
-            // 切換到「我的行程」頁面
-            if let tabBarController = self.tabBarController {
-                tabBarController.selectedIndex = 1 // 假設「我的行程」在第二個頁籤
-                
-                // 重設導航控制器的堆疊，讓首頁為根視圖
-                if let navController = tabBarController.viewControllers?.first as? UINavigationController {
-                    navController.popToRootViewController(animated: false)
-                }
-                
-            }
-        } catch {
-            print("Failed to save trip: \(error)")
-        }
     }
     
     private func navigateToMyTrips() {
@@ -135,5 +114,4 @@ class ExploreDetailController: UIViewController, UITableViewDelegate, UITableVie
         dayCell.configure(with: activity)
         return dayCell
     }
-    
 }

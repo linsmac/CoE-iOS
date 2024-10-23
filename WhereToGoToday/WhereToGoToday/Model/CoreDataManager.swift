@@ -26,10 +26,26 @@ class CoreDataManager {
             }
         }
     }
-    
+
+    //刪除全部core data中的資料
+    func deleteAllTrips() {
+        let context = CoreDataManager.shared.context
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = TripEntity.fetchRequest()
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+
+        do {
+            try context.execute(deleteRequest)
+            try context.save()
+            print("Successfully deleted all trips from Core Data.")
+        } catch {
+            print("Failed to delete trips: \(error)")
+        }
+    }
+
     // 新增 Trip 相關的處理方法
     func saveTrip(tripInfo: TripResponse) throws {
         let newTrip = TripEntity(context: context)
+        newTrip.id = UUID() // Core Data 自動生成唯一的 UUID
         newTrip.location = tripInfo.generatedTripInfo.tripOverview.location
         newTrip.startDate = convertToDate(tripInfo.generatedTripInfo.tripOverview.startDate)
         newTrip.endDate = convertToDate(tripInfo.generatedTripInfo.tripOverview.endDate)

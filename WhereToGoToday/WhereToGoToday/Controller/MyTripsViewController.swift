@@ -7,7 +7,7 @@ class MyTripsViewController: UIViewController, UITableViewDataSource, UITableVie
     
     @IBOutlet weak var myTripList: UITableView!
     
-    private let tripManager = TripManager()
+    private let tripManager = MyTripManager()
     
     //表格載入的起點
     override func viewDidLoad() {
@@ -54,6 +54,27 @@ class MyTripsViewController: UIViewController, UITableViewDataSource, UITableVie
         let imageNames = ["background1", "background2", "background3"] // 替換為實際圖片名稱
         let randomIndex = Int.random(in: 0..<imageNames.count)
         return UIImage(named: imageNames[randomIndex]) ?? UIImage()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showMyTripDetail" {
+            if let indexPath = myTripList.indexPathForSelectedRow,
+               let detailVC = segue.destination as? MyTripExploreDetailController {
+                let trip = tripManager.getTrips()[indexPath.row]
+                let tripEntityID = trip.id
+
+                // 從 Core Data 載入對應的 TripEntity 並傳遞資料
+                tripManager.fetchTripDetails(by: tripEntityID) { tripEntity in
+                    if let originalJSONData = tripEntity?.originalJSON {
+                        // 將 originalJSON 解碼為 TripResponse
+                        let decoder = JSONDecoder()
+                        if let tripResponse = try? decoder.decode(TripResponse.self, from: originalJSONData) {
+                            detailVC.tripInfo = tripResponse
+                        }
+                    }
+                }
+            }
+        }
     }
 
 

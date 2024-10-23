@@ -19,6 +19,7 @@ class IndexViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadUserName()
+//        CoreDataManager.shared.deleteAllTrips()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,8 +37,8 @@ class IndexViewController: UIViewController {
     private func loadUserName() {
         if let savedName = UserDefaults.standard.string(forKey: "userName") {
             print("目前儲存的使用者名稱是: \(savedName)")
-            //            UserDefaults.standard.removeObject(forKey: "userName")
-            //            print("使用者名稱已刪除")
+//          UserDefaults.standard.removeObject(forKey: "userName")
+//          print("使用者名稱已刪除")
         } else {
             print("尚未儲存使用者名稱")
         }
@@ -45,11 +46,7 @@ class IndexViewController: UIViewController {
  
     // MARK: - Action for the "Explore" button
     @IBAction func exploreButtonTapped(_ sender: UIButton) {
-        sender.isEnabled = false
         fetchTripData()
-        DispatchQueue.main.async {
-            sender.isEnabled = true
-        }
     }
     
     // MARK: - Action for the "Clear" button
