@@ -30,6 +30,7 @@
 		30CEDD602CBF985300EFEA92 /* UserNameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CEDD5F2CBF985300EFEA92 /* UserNameController.swift */; };
 		30CEDDA02CC5553600EFEA92 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 30CEDD9E2CC5553600EFEA92 /* DataModel.xcdatamodeld */; };
 		30CEDDA22CC55BC400EFEA92 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CEDDA12CC55BC400EFEA92 /* CoreDataManager.swift */; };
+		30D8F2792CCCD4F000CFF917 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D8F2782CCCD4F000CFF917 /* FeedbackViewController.swift */; };
 		30F940AC2CAD10350000DACD /* TripModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F940AB2CAD10350000DACD /* TripModels.swift */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +78,7 @@
 		30CEDD5F2CBF985300EFEA92 /* UserNameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameController.swift; sourceTree = "<group>"; };
 		30CEDD9F2CC5553600EFEA92 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		30CEDDA12CC55BC400EFEA92 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		30D8F2782CCCD4F000CFF917 /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		30F940AB2CAD10350000DACD /* TripModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripModels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -191,6 +193,7 @@
 				30BB7A192CA41DE9004A0239 /* ExploreDetailController.swift */,
 				30CEDD5F2CBF985300EFEA92 /* UserNameController.swift */,
 				3091FCE12CC9308900446748 /* MyTripExploreDetailController.swift */,
+				30D8F2782CCCD4F000CFF917 /* FeedbackViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				3091FCE22CC9308A00446748 /* MyTripExploreDetailController.swift in Sources */,
 				30875A932C6397F20024A03B /* ViewController.swift in Sources */,
 				30F940AC2CAD10350000DACD /* TripModels.swift in Sources */,
+				30D8F2792CCCD4F000CFF917 /* FeedbackViewController.swift in Sources */,
 				308B5F1D2C983BC00012214E /* IndexViewController.swift in Sources */,
 				30C5F28A2C87FC4D00E678F2 /* MyTripsViewController.swift in Sources */,
 				30875A8F2C6397F20024A03B /* AppDelegate.swift in Sources */,

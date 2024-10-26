@@ -99,6 +99,7 @@ Cg
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ftY-36-sge">
                                                 <rect key="frame" x="68" y="72.333333333333343" width="257" height="34"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name=".PingFangTC-Regular" family=".PingFang TC" pointSize="15"/>
@@ -203,6 +204,7 @@ Cg
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3kw-cY-O0J">
                                                 <rect key="frame" x="60" y="175.33333333333334" width="273" height="34"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
                                                 <fontDescription key="fontDescription" name=".PingFangTC-Regular" family=".PingFang TC" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
@@ -264,6 +266,7 @@ Cg
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2gL-L9-8jp">
                                                 <rect key="frame" x="60" y="341.33333333333331" width="273" height="34"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
                                                 <fontDescription key="fontDescription" name=".PingFangTC-Regular" family=".PingFang TC" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -310,6 +313,7 @@ Cg
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7eW-NR-QI5">
                                                 <rect key="frame" x="60" y="505.33333333333337" width="273" height="34"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
                                                 <fontDescription key="fontDescription" name=".PingFangTC-Regular" family=".PingFang TC" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
@@ -672,7 +676,6 @@ Cg
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="fKK-xH-HGc"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="114" id="kVw-Jk-0Df"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="mGo-pT-a9O"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="儲存行程">
@@ -1309,21 +1312,97 @@ Cg
             </objects>
             <point key="canvasLocation" x="5339.6946564885493" y="-28.169014084507044"/>
         </scene>
-        <!--View Controller-->
+        <!--Feedback View Controller-->
         <scene sceneID="1Cv-fA-cxT">
             <objects>
-                <viewController id="LBf-SV-KzV" sceneMemberID="viewController">
+                <viewController id="LBf-SV-KzV" customClass="FeedbackViewController" customModule="WhereToGoToday" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gtY-Lh-vJB">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="請輸入您的email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eb5-Pn-8At">
+                                <rect key="frame" x="48.666666666666657" y="130" width="296" height="34"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您的Email：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHN-BX-Cdp">
+                                <rect key="frame" x="48.666666666666657" y="98" width="170" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="8cE-Z5-CZx"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="170" id="frM-IZ-KHM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="回饋內容：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eod-U8-YxU">
+                                <rect key="frame" x="48.666666666666657" y="203" width="164" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="eIh-jv-ngp"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="164" id="jeQ-XL-33n"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oyc-po-Poz">
+                                <rect key="frame" x="48.666666666666657" y="235" width="296" height="396"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTZ-kk-WNi">
+                                <rect key="frame" x="139.66666666666666" y="715" width="114" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="BED-aB-Z7E"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="114" id="Ohy-5O-v3B"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="發送">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" red="0.93333333330000001" green="0.32549019610000002" blue="0.34509803919999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="strokeColor" red="0.70588235290000001" green="0.070588235289999995" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </backgroundConfiguration>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="saveDetailButtonTapped:" destination="531-c1-CYY" eventType="touchUpInside" id="Fu7-D2-FcL"/>
+                                    <action selector="sendFeedback:" destination="LBf-SV-KzV" eventType="touchUpInside" id="fx4-FF-GDG"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="DuU-bt-zFs"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="1" green="0.98078356219999996" blue="0.97685586359999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="DuU-bt-zFs" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ZHN-BX-Cdp" secondAttribute="trailing" symbolic="YES" id="07e-Ns-HBj"/>
+                            <constraint firstItem="dTZ-kk-WNi" firstAttribute="centerX" secondItem="DuU-bt-zFs" secondAttribute="centerX" id="2UF-Qy-JP9"/>
+                            <constraint firstItem="ZHN-BX-Cdp" firstAttribute="top" secondItem="DuU-bt-zFs" secondAttribute="top" constant="42" id="2ap-M7-f5h"/>
+                            <constraint firstItem="eb5-Pn-8At" firstAttribute="top" secondItem="ZHN-BX-Cdp" secondAttribute="bottom" constant="8" symbolic="YES" id="95T-BQ-9ZN"/>
+                            <constraint firstItem="oyc-po-Poz" firstAttribute="leading" secondItem="DuU-bt-zFs" secondAttribute="leading" constant="48.5" id="FBw-rR-l3V"/>
+                            <constraint firstItem="DuU-bt-zFs" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Eod-U8-YxU" secondAttribute="trailing" symbolic="YES" id="Ky3-K0-pOI"/>
+                            <constraint firstItem="DuU-bt-zFs" firstAttribute="trailing" secondItem="eb5-Pn-8At" secondAttribute="trailing" constant="48.5" id="WjH-3p-Q3Z"/>
+                            <constraint firstItem="Eod-U8-YxU" firstAttribute="top" secondItem="eb5-Pn-8At" secondAttribute="bottom" constant="39" id="Yrh-4j-en0"/>
+                            <constraint firstItem="dTZ-kk-WNi" firstAttribute="top" secondItem="oyc-po-Poz" secondAttribute="bottom" constant="84" id="fHg-DT-hmW"/>
+                            <constraint firstItem="Eod-U8-YxU" firstAttribute="leading" secondItem="DuU-bt-zFs" secondAttribute="leading" constant="48.5" id="jrg-e2-Z7i"/>
+                            <constraint firstItem="oyc-po-Poz" firstAttribute="top" secondItem="Eod-U8-YxU" secondAttribute="bottom" constant="8" symbolic="YES" id="lSm-mf-gFK"/>
+                            <constraint firstItem="ZHN-BX-Cdp" firstAttribute="leading" secondItem="DuU-bt-zFs" secondAttribute="leading" constant="48.5" id="mnY-tz-oD9"/>
+                            <constraint firstItem="eb5-Pn-8At" firstAttribute="leading" secondItem="DuU-bt-zFs" secondAttribute="leading" constant="48.5" id="qff-bk-ajL"/>
+                            <constraint firstItem="DuU-bt-zFs" firstAttribute="bottom" secondItem="dTZ-kk-WNi" secondAttribute="bottom" constant="40" id="wZ5-bs-Yyv"/>
+                            <constraint firstItem="DuU-bt-zFs" firstAttribute="trailing" secondItem="oyc-po-Poz" secondAttribute="trailing" constant="48.5" id="ykr-Ti-xUw"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="PKN-E2-Nfi"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="eb5-Pn-8At" id="o3J-sK-rJk"/>
+                        <outlet property="feedbackTextView" destination="oyc-po-Poz" id="Bt2-G3-5ll"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZJu-Cl-Rkh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5340" y="677"/>
+            <point key="canvasLocation" x="5339.6946564885493" y="676.76056338028172"/>
         </scene>
         <!--探索-->
         <scene sceneID="Bj8-Ii-8ef">
