@@ -47,6 +47,11 @@ class MyTripsViewController: UIViewController, UITableViewDataSource, UITableVie
         cell.backgroundImageView.image = getRandomBackgroundImage()
         cell.nameLabel.text = trip.name
         cell.dateLabel.text = trip.date
+        
+        // 添加選項按鈕的動作
+        cell.optionsButton.tag = indexPath.row
+        cell.optionsButton.addTarget(self, action: #selector(showOptions(_:)), for: .touchUpInside)
+ 
         return cell
     }
     
@@ -54,6 +59,48 @@ class MyTripsViewController: UIViewController, UITableViewDataSource, UITableVie
         let imageNames = ["background1", "background2", "background3"] // 替換為實際圖片名稱
         let randomIndex = Int.random(in: 0..<imageNames.count)
         return UIImage(named: imageNames[randomIndex]) ?? UIImage()
+    }
+    
+    // 顯示刪除和編輯選項
+    @objc func showOptions(_ sender: UIButton) {
+        let index = sender.tag
+        let trip = tripManager.getTrips()[index]
+        
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "刪除", style: .destructive, handler: { _ in
+            self.confirmDelete(trip: trip)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "取消", style: .cancel))
+        
+        present(alert, animated: true)
+    }
+    
+    // 刪除確認彈窗
+    func confirmDelete(trip: Trip) {
+        let alert = UIAlertController(title: "刪除行程", message: "確定要刪除此行程嗎？", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "刪除", style: .destructive, handler: { _ in
+            self.deleteTrip(trip: trip)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "取消", style: .cancel))
+        
+        present(alert, animated: true)
+    }
+
+    // 刪除行程並刷新
+    func deleteTrip(trip: Trip) {
+        tripManager.deleteTrip(withId: trip.id) { [weak self] success in
+            if success {
+                DispatchQueue.main.async {
+                    self?.fetchTrips() // 刪除後重新加載資料
+                }
+            } else {
+                print("Failed to delete trip")
+            }
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

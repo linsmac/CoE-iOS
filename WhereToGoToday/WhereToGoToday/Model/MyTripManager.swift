@@ -2,7 +2,7 @@ import UIKit
 import CoreData
 
 struct Trip {
-    let id: UUID // 新增此屬性
+    let id: UUID
     let name: String
     let date: String
     let image: UIImage
@@ -17,6 +17,7 @@ struct Trip {
 
 class MyTripManager {
     private var trips: [Trip] = []
+    private let context = CoreDataManager.shared.context
 
     func getTrips() -> [Trip] {
         return trips
@@ -64,6 +65,30 @@ class MyTripManager {
         } catch {
             print("Failed to fetch trip details: \(error)")
             completion(nil)
+        }
+    }
+    
+    // 新增 deleteTrip 方法
+    func deleteTrip(withId id: UUID, completion: @escaping (Bool) -> Void) {
+        let fetchRequest: NSFetchRequest<TripEntity> = TripEntity.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+
+        do {
+            let fetchedTrips = try context.fetch(fetchRequest)
+            if let tripEntityToDelete = fetchedTrips.first {
+                context.delete(tripEntityToDelete)
+                try context.save()
+                
+                // 更新 trips 陣列
+                trips.removeAll { $0.id == id }
+                
+                completion(true) // 刪除成功
+            } else {
+                completion(false) // 找不到要刪除的行程
+            }
+        } catch {
+            print("Failed to delete trip: \(error)")
+            completion(false) // 刪除失敗
         }
     }
 

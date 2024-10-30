@@ -1144,7 +1144,7 @@ Cg
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MIR-8Z-yhF">
+                                                <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="optionsButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MIR-8Z-yhF">
                                                     <rect key="frame" x="330" y="5" width="38" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="76a-bv-37q"/>
@@ -1178,8 +1178,8 @@ Cg
                                         <connections>
                                             <outlet property="backgroundImageView" destination="kTt-m1-Dfq" id="qqu-sn-YP5"/>
                                             <outlet property="dateLabel" destination="d1z-Bo-ZWr" id="XTN-lv-NIr"/>
-                                            <outlet property="moreButton" destination="MIR-8Z-yhF" id="KlM-4g-hhN"/>
                                             <outlet property="nameLabel" destination="Bho-Mb-2kI" id="KcE-M9-Ymh"/>
+                                            <outlet property="optionsButton" destination="MIR-8Z-yhF" id="XcC-NN-QCj"/>
                                             <segue destination="65t-hy-S6k" kind="show" identifier="showMyTripDetail" id="lV6-6z-eqI"/>
                                         </connections>
                                     </tableViewCell>
