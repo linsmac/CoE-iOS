@@ -1,6 +1,6 @@
 import UIKit
 
-class IndexViewController: UIViewController {
+class IndexViewController: UIViewController, TripAPIManagerDelegate {
     
     // MARK: - Outlets for TextFields
     @IBOutlet weak var scrollView: UIScrollView!
@@ -20,6 +20,20 @@ class IndexViewController: UIViewController {
         super.viewDidLoad()
         loadUserName()
 //        CoreDataManager.shared.deleteAllTrips()
+        
+        // 設置 TripAPIManager 的 delegate
+        TripAPIManager.shared.delegate = self
+    }
+    
+    func didFetchTripData(_ tripResponse: TripResponse) {
+        apiResponseData = tripResponse
+        DispatchQueue.main.async {
+            self.navigateToExploreDetail()
+        }
+    }
+    
+    func didFailToFetchTripData(error: Error) {
+        print("Failed to fetch trip data: \(error.localizedDescription)")
     }
     
     override func viewWillAppear(_ animated: Bool) {

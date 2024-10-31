@@ -4,10 +4,12 @@ import Foundation
 class TripAPIManager {
     static let shared = TripAPIManager()
     
+    weak var delegate: TripAPIManagerDelegate?
+    
     func fetchTripData(tripTheme: String, transportation: String, departureTime: String, returnTime: String, departureLocation: String, returnLocation: String, completion: @escaping (Result<TripResponse, Error>) -> Void) {
         let urlString = "https://fastapi-x70s.onrender.com/Trip/"
         guard let url = URL(string: urlString) else {
-            completion(.failure(NSError(domain: "Invalid URL", code: -1, userInfo: nil)))
+            delegate?.didFailToFetchTripData(error: NSError(domain: "Invalid URL", code: -1, userInfo: nil))
             return
         }
         
@@ -27,24 +29,31 @@ class TripAPIManager {
         request.httpBody = try? JSONSerialization.data(withJSONObject: body, options: .fragmentsAllowed)
         
         // 發送 API 請求
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+        let task = URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
+            guard let self = self else { return }
             if let error = error {
-                completion(.failure(error))
+                self.delegate?.didFailToFetchTripData(error: error)
                 return
             }
             
             guard let data = data else {
-                completion(.failure(NSError(domain: "No Data", code: -2, userInfo: nil)))
+                self.delegate?.didFailToFetchTripData(error: NSError(domain: "No Data", code: -2, userInfo: nil))
                 return
             }
             
             do {
                 let responseData = try JSONDecoder().decode(TripResponse.self, from: data)
-                completion(.success(responseData))
+                self.delegate?.didFetchTripData(responseData)
             } catch {
-                completion(.failure(error))
+                self.delegate?.didFailToFetchTripData(error: error)
             }
         }
         task.resume()
     }
 }
+
+protocol TripAPIManagerDelegate: AnyObject {
+    func didFetchTripData(_ tripResponse: TripResponse)
+    func didFailToFetchTripData(error: Error)
+}
+
