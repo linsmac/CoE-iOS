@@ -15,6 +15,7 @@ class ExploreDetailController: UIViewController, UITableViewDelegate, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        segmentedControl.overrideUserInterfaceStyle = .light
     }
     
     private func setupView() {

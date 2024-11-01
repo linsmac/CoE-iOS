@@ -12,6 +12,7 @@ class MyTripExploreDetailController: UIViewController, UITableViewDelegate, UITa
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        segmentedControl.overrideUserInterfaceStyle = .light
     }
     
     override func viewDidAppear(_ animated: Bool) {

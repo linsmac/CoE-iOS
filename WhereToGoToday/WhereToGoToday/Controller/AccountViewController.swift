@@ -73,6 +73,7 @@ class AccountViewController: UIViewController, UITableViewDataSource, UITableVie
         // 設置 Cell 的圖示和文字
         cell.imageView?.image = UIImage(systemName: "pencil.and.outline") // 使用 SF Symbol
         cell.textLabel?.text = "意見回饋"
+        cell.textLabel?.textColor = .black // 設置文字顏色為黑色
         cell.accessoryType = .disclosureIndicator // 右邊顯示箭頭
         
         return cell

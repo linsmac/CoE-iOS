@@ -13,6 +13,8 @@ class FeedbackViewController: UIViewController, MFMailComposeViewControllerDeleg
         let backButton = UIBarButtonItem()
         backButton.title = "帳戶"
         navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+        feedbackTextView.backgroundColor = .white
+        feedbackTextView.overrideUserInterfaceStyle = .light
         
         setupFeedbackTextView()
     }
